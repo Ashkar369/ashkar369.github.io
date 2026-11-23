@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>09 Positioning – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Positioning practice</h1>
+  <div class="box static">static – top: 50px does nothing here.</div>
+  <div class="box relative">relative – moved 10px down and 30px right from its normal place.</div>
+  <div class="box parent">
+    I am the parent with <code>position: relative</code>.
+    <span class="absolute">absolute badge</span>
+  </div>
+  <h2>z-index</h2>
+  <div class="overlap"><div class="a">z-index: 2 (on top)</div><div class="b">z-index: 1</div></div>
+  <div class="sticky-wrap">
+    <div class="sticky">sticky – scroll down: I stick to the top until my grey parent box ends.</div>
+    <p>Keep scrolling…</p>
+  </div>
+  <p>The red "fixed" button in the corner never moves when you scroll.</p>
+  <a class="fixed" href="#">fixed ↑</a>
+</body>
+</html>

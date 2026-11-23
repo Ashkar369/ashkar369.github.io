@@ -1,0 +1,13 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; background: #f1f5fa; margin: 0; padding: 2rem 1rem; }
+form { max-width: 520px; margin: 0 auto; background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+label { display: block; font-weight: 600; margin: .9rem 0 .3rem; }
+.hint { font-size: .85rem; color: #5b6b80; margin: .2rem 0 0; }
+input { font: inherit; width: 100%; padding: .55rem .7rem; border: 2px solid #c4cdd8; border-radius: 8px; }
+input:focus { outline: none; border-color: #2a7ae2; box-shadow: 0 0 0 3px #b8d4f5; }
+input:required + .hint::after { content: " (required)"; color: #c0392b; }
+/* Only after the user has touched the field */
+input:user-invalid { border-color: #c0392b; background: #fff5f5; }
+input:user-valid { border-color: seagreen; }
+input:out-of-range { color: #c0392b; }
+button { font: inherit; margin-top: 1.2rem; background: #2a7ae2; color: white; border: 0; border-radius: 8px; padding: .6rem 1.2rem; cursor: pointer; }

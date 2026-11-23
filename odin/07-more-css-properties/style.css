@@ -1,0 +1,11 @@
+body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+.demo { min-height: 140px; padding: 1rem; border: 1px solid #ccc; }
+.bg { background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aurora_borealis_over_Saana_fell.jpg/960px-Aurora_borealis_over_Saana_fell.jpg") center / cover no-repeat; color: white; text-shadow: 0 1px 3px black; }
+.gradient { background: linear-gradient(135deg, #2a7ae2, #6a11cb); color: white; }
+.border { border: 4px dashed #c0392b; border-left: 12px solid #1f3a5f; }
+.radius { border-radius: 24px; background: #e6f4ea; }
+.circle { width: 120px; height: 120px; min-height: 0; border-radius: 50%; background: gold; display: grid; place-items: center; }
+.shadow { box-shadow: 0 8px 20px rgba(0, 0, 0, .25); border-radius: 10px; }
+.overflow { height: 90px; min-height: 0; overflow: auto; background: #f3f6fa; }
+.opacity { background: #2a7ae2; color: white; opacity: .45; }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>05 CSS Units – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSS units practice</h1>
+
+  <h2>em vs rem (each level is nested inside the one before)</h2>
+  <div class="box em-demo">em:
+    <div class="level">Level 1 (1.2em)
+      <div class="level">Level 2 (1.2em of level 1)
+        <div class="level">Level 3 – getting big! (snowball)</div>
+      </div>
+    </div>
+  </div>
+  <div class="box rem-demo">rem:
+    <div class="level">Level 1 (1.2rem)
+      <div class="level">Level 2 (1.2rem)
+        <div class="level">Level 3 – same size every time</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>% / vw / vh / px</h2>
+  <div class="box percent">width: 50% of the parent</div>
+  <div class="box vw">width: 30vw (30% of the window – resize the window!)</div>
+  <div class="box vh">height: 20vh (20% of the window height)</div>
+  <div class="box px-border">border: 4px – a fixed pixel size is fine for borders</div>
+</body>
+</html>

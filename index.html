@@ -1,325 +1,623 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ashkar Siyad – Web Technologies student at Riga Nordic University. Profile, skills, projects and contact.">
-  <title>Ashkar Siyad – Web Technologies Student</title>
-
-  <!-- ODIN: More text styles – custom font loaded from Google Fonts -->
+  <title>Ashkar Siyad – Portfolio</title>
+  <meta name="description" content="Ashkar Siyad – Information Systems student at Riga Nordic University. Class activities, projects, certificates and The Odin Project work.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply the saved theme before the page paints, to avoid a flash
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
 </head>
 <body>
-  <!-- Accessibility: lets keyboard users jump straight to the content -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ODIN: Grid – grid-template-areas: .page is the grid; each section below is placed in a named area -->
-  <div class="page">
-
-    <!-- ODIN: Positioning – sticky header (position: sticky in style.css) -->
-    <!-- ODIN: Flexbox + Grid – the header/nav uses flexbox inside the grid layout -->
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Ashkar Siyad – back to top">
-        <!-- ODIN: SVG – inline SVG logo (monogram "AS") -->
-        <svg class="brand__logo" viewBox="0 0 48 48" width="40" height="40" role="img" aria-labelledby="logoTitle">
-          <title id="logoTitle">AS monogram logo</title>
-          <defs>
-            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#4f7cff"/>
-              <stop offset="100%" stop-color="#f2c94c"/>
-            </linearGradient>
-          </defs>
-          <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#logoGrad)"/>
-          <text x="24" y="31" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="18" fill="#ffffff">AS</text>
+  <!-- ===== Sticky header with navigation ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="Ashkar Siyad – home">
+        <svg class="brand-logo" viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="11" fill="currentColor"/>
+          <text x="20" y="26" text-anchor="middle" font-size="15" font-weight="800" fill="var(--on-accent)" font-family="Plus Jakarta Sans, sans-serif">AS</text>
         </svg>
-        <span class="brand__name">Ashkar Siyad</span>
+        <span class="brand-name">Ashkar Siyad</span>
       </a>
 
-      <nav class="site-nav" aria-label="Main">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="#about">About</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certs">Certificates</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#activities">Class activities</a></li>
+          <li><a href="#projects">Past projects</a></li>
+          <li><a href="#odin">The Odin Project</a></li>
+          <li><a href="#homework">Homework</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- ODIN: Custom properties – dark-mode toggle switches the :root colour theme -->
-      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
-        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
-          <path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-        </svg>
-        <span class="theme-toggle__label">Dark</span>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-    </header>
+    </div>
+  </header>
 
-    <main id="main" class="content">
+  <main id="main">
 
-      <!-- ===== HERO ===== -->
-      <section class="hero" id="top" aria-labelledby="heroTitle">
-        <div class="hero__avatar">
-          <!-- ODIN: SVG – inline SVG avatar illustration (camera, for photography) -->
-          <svg viewBox="0 0 120 120" role="img" aria-labelledby="avatarTitle">
-            <title id="avatarTitle">Illustration of a camera, representing Ashkar's love of photography</title>
-            <circle cx="60" cy="60" r="58" fill="var(--accent-soft)"/>
-            <rect x="22" y="40" width="76" height="50" rx="10" fill="var(--accent)"/>
-            <rect x="44" y="30" width="32" height="14" rx="4" fill="var(--accent)"/>
-            <circle cx="60" cy="65" r="17" fill="var(--surface)"/>
-            <circle cx="60" cy="65" r="10" fill="var(--accent-2)"/>
-            <circle cx="86" cy="50" r="4" fill="var(--surface)"/>
-          </svg>
-          <!-- ODIN: Positioning – absolutely positioned badge on top of the avatar -->
-          <span class="badge">Open to internships</span>
+    <!-- ===== 1. HOME / ABOUT ===== -->
+    <section id="home" class="hero section" aria-labelledby="home-title">
+      <div class="container hero-grid">
+        <div class="hero-photo" role="img" aria-label="Photo placeholder for Ashkar Siyad">
+          <span>AS</span>
+          <small>Photo coming soon</small>
         </div>
 
-        <div class="hero__text">
-          <p class="eyebrow">Web Technologies student · RNU</p>
-          <h1 id="heroTitle">Hi, I'm <span class="highlight">Ashkar Siyad</span></h1>
+        <div class="hero-text">
+          <p class="eyebrow">Information Systems · Riga Nordic University</p>
+          <h1 id="home-title">Hi, I'm Ashkar Siyad</h1>
           <p class="lead">
-            I'm from India, I live in Riga, Latvia, and I'm studying Web Technologies at
-            Riga Nordic University. I love photography, video editing and travelling – and
-            I'm learning to build clean, accessible websites.
+            I'm a student from India, living in Riga, Latvia, and studying Information Systems at
+            Riga Nordic University (RNU). I build accessible websites with HTML, CSS and JavaScript,
+            and I love photography, video editing and travelling.
           </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="#projects">See my projects</a>
-            <a class="btn" href="#contact">Get in touch</a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#activities">See my work</a>
+            <a class="btn btn-ghost is-disabled" aria-disabled="true" title="CV coming soon" role="link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              Download CV <span class="badge-soon">soon</span>
+            </a>
           </div>
+          <ul class="contact-links" aria-label="Contact links">
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              <span class="selectable">ashkarsiyad7@gmail.com</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              <a href="https://github.com/Ashkar369" target="_blank" rel="noopener">github.com/Ashkar369</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+              <span class="placeholder-text">LinkedIn – link coming soon</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Riga, Latvia
+            </li>
+          </ul>
         </div>
-      </section>
+      </div>
 
-      <!-- ===== ABOUT ===== -->
-      <section class="about card" id="about" aria-labelledby="aboutTitle">
-        <h2 id="aboutTitle">About me</h2>
-        <p>
-          I started the Web Technologies programme at RNU in 2025. Moving from India to Latvia
-          gave me the chance to study in an international environment and work with people from
-          many cultures.
-        </p>
-        <p>
-          I'm a reliable, hands-on person who likes getting things done. Outside class I take
-          photos, edit videos and explore new places with my camera.
-        </p>
-        <!-- ODIN: Advanced selectors – the "+" sibling selector styles the list right after this paragraph -->
-        <ul class="facts">
-          <li><strong>From:</strong> India</li>
-          <li><strong>Lives in:</strong> Riga, Latvia</li>
-          <li><strong>Studies:</strong> Web Technologies, Riga Nordic University (2025 – present)</li>
-          <li><strong>Experience:</strong> [EXPERIENCE – Ashkar to fill: roles / internships]</li>
-          <li><strong>Languages:</strong> [LANGUAGES – Ashkar to fill]</li>
+      <!-- Dashboard stat tiles -->
+      <div class="container">
+        <ul class="stats" aria-label="At a glance">
+          <li class="stat"><span class="stat-num">7</span><span class="stat-label">Class tasks done</span></li>
+          <li class="stat"><span class="stat-num">9</span><span class="stat-label">Live web projects</span></li>
+          <li class="stat"><span class="stat-num">13</span><span class="stat-label">Certificates</span></li>
+          <li class="stat"><span class="stat-num">3<small>/4</small></span><span class="stat-label">Odin courses finished</span></li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-      <!-- ===== SKILLS TABLE ===== -->
-      <section class="skills card" id="skills" aria-labelledby="skillsTitle">
-        <h2 id="skillsTitle">Skills &amp; education</h2>
-        <!-- ODIN: Tables – skills table with caption, thead, tbody and scope attributes -->
-        <div class="table-wrap">
-          <table class="skills-table">
-            <caption>My current skills and where I learned them</caption>
+    <!-- ===== 2. SKILLS & EXPERTISE ===== -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">What I can do</p>
+          <h2 id="skills-title">Skills &amp; expertise</h2>
+        </header>
+
+        <div class="skill-grid">
+          <article class="card skill">
+            <h3>HTML &amp; CSS</h3>
+            <p>Semantic HTML, Flexbox, Grid, forms and validation, custom properties, responsive layouts.</p>
+            <div class="meter" role="img" aria-label="Level: intermediate"><span style="--level:70%"></span></div>
+            <p class="skill-level">Intermediate · RNU + The Odin Project</p>
+          </article>
+          <article class="card skill">
+            <h3>JavaScript</h3>
+            <p>Variables, functions, loops, arrays, DOM and events, objects, constructors, factories and modules.</p>
+            <div class="meter" role="img" aria-label="Level: beginner to intermediate"><span style="--level:55%"></span></div>
+            <p class="skill-level">Beginner+ · The Odin Project</p>
+          </article>
+          <article class="card skill">
+            <h3>Git &amp; GitHub</h3>
+            <p>Commit, push and publish real websites with GitHub Pages. Nine projects live.</p>
+            <div class="meter" role="img" aria-label="Level: intermediate"><span style="--level:60%"></span></div>
+            <p class="skill-level">Intermediate · course projects</p>
+          </article>
+          <article class="card skill">
+            <h3>Generative AI &amp; prompting</h3>
+            <p>How LLMs work, writing precise prompts, using AI tools for data and content.</p>
+            <div class="meter" role="img" aria-label="Level: intermediate"><span style="--level:65%"></span></div>
+            <p class="skill-level">Intermediate · Entri + IBM SkillsBuild</p>
+          </article>
+          <article class="card skill">
+            <h3>C++ programming</h3>
+            <p>Syntax, data types, conditions, loops, arrays, functions and an introduction to OOP.</p>
+            <div class="meter" role="img" aria-label="Level: beginner to intermediate"><span style="--level:45%"></span></div>
+            <p class="skill-level">Beginner+ · Entri diploma</p>
+          </article>
+          <article class="card skill">
+            <h3>IT support</h3>
+            <p>Operating systems, networking basics, cloud service models and IT security basics.</p>
+            <div class="meter" role="img" aria-label="Level: beginner to intermediate"><span style="--level:45%"></span></div>
+            <p class="skill-level">Beginner+ · Udemy course</p>
+          </article>
+          <article class="card skill">
+            <h3>Photography &amp; video</h3>
+            <p>Taking photos of people, places and moments; cutting clips into finished videos.</p>
+            <div class="meter" role="img" aria-label="Level: strong"><span style="--level:85%"></span></div>
+            <p class="skill-level">Strong · self-taught</p>
+          </article>
+          <article class="card skill skill-tools">
+            <h3>Tools</h3>
+            <ul class="tag-list">
+              <li>VS Code</li><li>Git</li><li>GitHub Pages</li><li>Chrome DevTools</li>
+              <li>Node.js</li><li>PowerPoint</li><li>Excel</li>
+            </ul>
+            <h3 class="mt">Languages</h3>
+            <p class="placeholder-text">Spoken languages – coming soon</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. EXPERIENCE & EDUCATION ===== -->
+    <section id="journey" class="section section-alt" aria-labelledby="journey-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Experience &amp; education</p>
+          <h2 id="journey-title">My journey</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-date">2025 – present</span>
+            <div class="card">
+              <h3>Bachelor's in Information Systems</h3>
+              <p class="muted">Riga Nordic University (RNU) · Riga, Latvia</p>
+              <p>Courses include Web Technologies, Cloud and IoT, Blockchain Technologies, Generative AI Applications and Optimization Theory, plus two professional traineeships.</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">May 2025</span>
+            <div class="card">
+              <h3>Generative AI and Prompt Engineering Basics</h3>
+              <p class="muted">Entri · online course</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">Apr 2025</span>
+            <div class="card">
+              <h3>Advanced Diploma in Programming through C++</h3>
+              <p class="muted">Entri · online course</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">Dec 2024</span>
+            <div class="card">
+              <h3>Information Technology Support</h3>
+              <p class="muted">Udemy · online course</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-date">Before 2025</span>
+            <div class="card">
+              <h3>Higher secondary education</h3>
+              <p class="muted">India</p>
+              <p>Mathematics, Physics, Computer Science and English.</p>
+            </div>
+          </li>
+          <li class="timeline-item timeline-soon">
+            <span class="timeline-date">Experience</span>
+            <div class="card">
+              <h3>Work experience &amp; internships</h3>
+              <p class="placeholder-text">Roles and internships – coming soon</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 4. CERTIFICATIONS ===== -->
+    <section id="certificates" class="section" aria-labelledby="certs-title">
+      <div class="container">
+        <header class="section-head section-head-row">
+          <div>
+            <p class="eyebrow">13 certificates</p>
+            <h2 id="certs-title">Certifications</h2>
+          </div>
+          <div class="head-actions">
+            <a class="btn btn-ghost" href="assets/decks/Certifications.pptx" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              All certificates (PPTX, 4.1 MB)
+            </a>
+            <a class="btn btn-ghost" href="assets/certificates/IBM_Certificates_Ashkar_Siyad.pdf" target="_blank" rel="noopener">IBM certificates (PDF)</a>
+          </div>
+        </header>
+
+        <ul class="cert-grid">
+          <li><a class="card cert" href="assets/certificates/udemy-it-support.jpg" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/udemy-it-support.jpg" alt="Information Technology Support certificate from Udemy" loading="lazy" width="640" height="453"><span class="cert-title">Information Technology Support</span><span class="cert-meta">Udemy · Dec 2024</span></a></li>
+          <li><a class="card cert" href="assets/certificates/entri-cpp-diploma.jpg" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/entri-cpp-diploma.jpg" alt="Advanced Diploma in Programming through C++ certificate from Entri" loading="lazy" width="640" height="453"><span class="cert-title">Advanced Diploma in Programming through C++</span><span class="cert-meta">Entri · Apr 2025</span></a></li>
+          <li><a class="card cert" href="assets/certificates/entri-genai-prompt-engineering.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/entri-genai-prompt-engineering.jpg" alt="Generative AI and Prompt Engineering Basics certificate from Entri" loading="lazy" width="640" height="453"><span class="cert-title">Generative AI and Prompt Engineering Basics</span><span class="cert-meta">Entri · May 2025</span></a></li>
+          <li><a class="card cert" href="assets/certificates/ai-fundamentals-foundations.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/ai-fundamentals-foundations.jpg" alt="AI Fundamentals: Foundations for Understanding AI certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">AI Fundamentals: Foundations for Understanding AI</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/ai-fundamentals-language-vision.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/ai-fundamentals-language-vision.jpg" alt="AI Fundamentals: Language and Vision in AI certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">AI Fundamentals: Language and Vision in AI</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/ai-literacy.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/ai-literacy.jpg" alt="AI Literacy certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">AI Literacy</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/ai-customer-service.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/ai-customer-service.jpg" alt="AI-Enabled Applications for Customer Service certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">AI-Enabled Applications for Customer Service</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/ai-fundamentals.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/ai-fundamentals.jpg" alt="Artificial Intelligence Fundamentals certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">Artificial Intelligence Fundamentals</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/craft-precise-prompts.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/craft-precise-prompts.jpg" alt="Craft Precise Prompts for AI Models certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">Craft Precise Prompts for AI Models</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/explore-emerging-tech.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/explore-emerging-tech.jpg" alt="Explore Emerging Tech certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">Explore Emerging Tech</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/genai-essentials-llms-data.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/genai-essentials-llms-data.jpg" alt="Generative AI Essentials: Using LLMs to Work with Data certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">Generative AI Essentials: Using LLMs to Work with Data</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/getting-started-genai.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/getting-started-genai.jpg" alt="Getting Started with Generative AI certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">Getting Started with Generative AI</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+          <li><a class="card cert" href="assets/certificates/agentic-ai.png" target="_blank" rel="noopener"><img src="assets/certificates/thumbs/agentic-ai.jpg" alt="Make Agentic AI Work for You certificate from IBM SkillsBuild" loading="lazy" width="640" height="453"><span class="cert-title">Make Agentic AI Work for You</span><span class="cert-meta">IBM SkillsBuild</span></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 5. CLASS ACTIVITIES ===== -->
+    <section id="activities" class="section section-alt" aria-labelledby="activities-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Web Technologies · practical tasks</p>
+          <h2 id="activities-title">Class activities</h2>
+          <p class="section-intro">Every practical task from the Web Technologies course, in date order, with links to the code, live demos and files.</p>
+        </header>
+
+        <div class="table-wrap card">
+          <table class="activity-table">
+            <caption class="sr-only">Practical tasks with date, description and links</caption>
             <thead>
-              <tr>
-                <th scope="col">Skill</th>
-                <th scope="col">Level</th>
-                <th scope="col">Where I learned it</th>
-              </tr>
+              <tr><th scope="col">Date</th><th scope="col">Task</th><th scope="col">Description</th><th scope="col">Links</th></tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">HTML</th>
-                <td><span class="level" data-level="3">Intermediate</span></td>
-                <td>RNU · The Odin Project</td>
+                <td data-label="Date"><time datetime="2026-09-16">16.09.2026</time></td>
+                <td data-label="Task"><strong>HTML profile page</strong></td>
+                <td data-label="Description">A plain HTML page with 10+ tags, my details, and an explanation of each tag.</td>
+                <td data-label="Links"><a class="chip" href="assets/tasks/task-16-09-2026.html" target="_blank" rel="noopener">Live page</a></td>
               </tr>
               <tr>
-                <th scope="row">CSS (Grid, Flexbox)</th>
-                <td><span class="level" data-level="3">Intermediate</span></td>
-                <td>RNU · The Odin Project</td>
+                <td data-label="Date"><time datetime="2026-09-30">30.09.2026</time></td>
+                <td data-label="Task"><strong>About me, education &amp; an interesting topic</strong></td>
+                <td data-label="Description">Headings, paragraphs, nested bullet and numbered lists, and a coloured Northern Lights section with 5 images and a link.</td>
+                <td data-label="Links"><a class="chip" href="assets/tasks/task-30-09-2026.html" target="_blank" rel="noopener">Live page</a></td>
               </tr>
               <tr>
-                <th scope="row">C++ basics</th>
-                <td><span class="level" data-level="2">Beginner+</span></td>
-                <td>Entri – Advanced Diploma</td>
+                <td data-label="Date"><time datetime="2026-10-07">07.10.2026</time></td>
+                <td data-label="Task"><strong>All HTML tags, explained</strong></td>
+                <td data-label="Description">Every element from the MDN HTML reference with my own explanation, a live example and its code. Started Odin Intermediate HTML &amp; CSS.</td>
+                <td data-label="Links"><a class="chip" href="assets/tasks/all-html-tags.html" target="_blank" rel="noopener">Live page</a> <a class="chip" href="#odin-html">Odin work</a></td>
               </tr>
               <tr>
-                <th scope="row">Generative AI &amp; prompting</th>
-                <td><span class="level" data-level="3">Intermediate</span></td>
-                <td>Entri · IBM SkillsBuild</td>
+                <td data-label="Date"><time datetime="2026-10-14">14.10.2026</time></td>
+                <td data-label="Task"><strong>Decks, profile site &amp; presentation</strong></td>
+                <td data-label="Description">Merged all certificates and mini projects into two decks, built this profile site on GitHub Pages, and recorded a presentation of the Odin HTML &amp; CSS course.</td>
+                <td data-label="Links"><a class="chip" href="#certificates">Certificates</a> <a class="chip" href="#projects">Projects</a> <a class="chip" href="https://drive.google.com/drive/folders/1A6QT4F3Gkl8hSfOGzsHCAI9dBjMKD1kY?usp=sharing" target="_blank" rel="noopener">Drive</a></td>
               </tr>
               <tr>
-                <th scope="row">IT support</th>
-                <td><span class="level" data-level="2">Beginner+</span></td>
-                <td>Udemy course</td>
+                <td data-label="Date"><time datetime="2026-10-21">21.10.2026</time></td>
+                <td data-label="Task"><strong>Odin JavaScript course</strong></td>
+                <td data-label="Description">Organizing JavaScript code: objects, constructors, factory functions and modules. Projects: Library and Tic Tac Toe, with a presentation and recording.</td>
+                <td data-label="Links"><a class="chip" href="#odin-js">Odin work</a> <a class="chip" href="https://drive.google.com/drive/folders/1sLlEe94fcdJJcR962lTYD8pyDOno_rcm?usp=sharing" target="_blank" rel="noopener">Drive</a></td>
               </tr>
               <tr>
-                <th scope="row">Photography &amp; video editing</th>
-                <td><span class="level" data-level="4">Strong</span></td>
-                <td>Self-taught</td>
+                <td data-label="Date"><time datetime="2026-10-28">28.10.2026</time></td>
+                <td data-label="Task"><strong>JavaScript Basics (Foundations)</strong></td>
+                <td data-label="Description">JavaScript Basics lessons plus Rock Paper Scissors, Etch-a-Sketch and Calculator, with a presentation and recording.</td>
+                <td data-label="Links"><a class="chip" href="#odin-foundations">Odin work</a> <a class="chip" href="https://drive.google.com/drive/folders/1udHoJwkVtjaaCKImEBN5OOLGwJatileo?usp=sharing" target="_blank" rel="noopener">Drive</a></td>
               </tr>
               <tr>
-                <th scope="row">[MORE SKILLS – Ashkar to fill]</th>
-                <td>–</td>
-                <td>–</td>
+                <td data-label="Date"><time datetime="2026-11-11">11.11.2026</time></td>
+                <td data-label="Task"><strong>Profile page upgrade</strong></td>
+                <td data-label="Description">This site: new dashboard design with class activities, past projects, The Odin Project and homework sections.</td>
+                <td data-label="Links"><a class="chip" href="https://github.com/Ashkar369/ashkar369.github.io" target="_blank" rel="noopener">Code</a></td>
               </tr>
             </tbody>
           </table>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ===== PROJECTS DASHBOARD ===== -->
-      <!-- ODIN: Admin Dashboard – "My Projects" built as a dashboard with CSS Grid -->
-      <section class="dashboard" id="projects" aria-labelledby="projectsTitle">
-        <div class="dashboard__head">
-          <h2 id="projectsTitle">My Projects</h2>
-          <p class="muted">A dashboard of what I've built and studied.</p>
-        </div>
+    <!-- ===== 6. PAST PROJECTS ===== -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section-head section-head-row">
+          <div>
+            <p class="eyebrow">Mini projects</p>
+            <h2 id="projects-title">Past projects</h2>
+          </div>
+          <div class="head-actions">
+            <a class="btn btn-ghost" href="assets/decks/Mini_Projects.pptx" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+              All projects in one deck (PPTX, 9.9 MB)
+            </a>
+          </div>
+        </header>
 
-        <!-- ODIN: Advanced grid – repeat(), auto-fit, minmax() and fr units on .stats -->
-        <ul class="stats" aria-label="Quick numbers">
-          <li class="stat"><span class="stat__num">3</span><span class="stat__label">Mini projects</span></li>
-          <li class="stat"><span class="stat__num">13</span><span class="stat__label">Certificates</span></li>
-          <li class="stat"><span class="stat__num">20</span><span class="stat__label">Odin lessons</span></li>
-          <li class="stat"><span class="stat__num">1</span><span class="stat__label">Live website</span></li>
-        </ul>
-
-        <!-- ODIN: Flexbox + Grid – grid places the cards, flexbox lays out inside each card -->
         <div class="project-grid">
-          <!-- ODIN: Grid positioning – this featured card spans 2 columns (span) -->
-          <article class="project project--featured">
-            <h3>Personal profile website</h3>
-            <p>This site: plain HTML &amp; CSS using every concept from The Odin Project's Intermediate HTML &amp; CSS course.</p>
-            <ul class="tags"><li>HTML</li><li>CSS Grid</li><li>Flexbox</li><li>Forms</li></ul>
-            <a class="project__link" href="https://github.com/Ashkar369/ashkar369.github.io">View code on GitHub</a>
-          </article>
-          <article class="project">
-            <h3>Generative AI &amp; Prompt Engineering</h3>
-            <p>A 34-slide presentation about how generative AI works and how to write good prompts.</p>
-            <ul class="tags"><li>AI</li><li>Prompting</li></ul>
-          </article>
-          <article class="project">
-            <h3>C++ Programming</h3>
-            <p>Course project covering variables, loops, functions, arrays and an intro to OOP.</p>
-            <ul class="tags"><li>C++</li><li>OOP</li></ul>
-          </article>
-          <article class="project">
+          <article class="card project">
+            <p class="project-kicker">Udemy · Dec 2024</p>
             <h3>Information Technology Support</h3>
-            <p>Overview of IT infrastructure, operating systems, networking, cloud and security.</p>
-            <ul class="tags"><li>IT</li><li>Networking</li></ul>
+            <p>IT infrastructure, operating systems, networking, cloud service models, IT security, and ethics in IT support.</p>
+            <ul class="tag-list"><li>IT</li><li>Networking</li><li>Cloud</li></ul>
+            <a class="project-link" href="assets/projects/IT_Support.pptx" download>Download PPTX · 25 slides</a>
           </article>
-          <!-- ODIN: Grid positioning – line numbers: grid-column: 1 / -1 makes this note full width -->
-          <p class="project-grid__note">More projects coming soon as I continue my studies at RNU.</p>
+          <article class="card project">
+            <p class="project-kicker">Entri · Apr 2025</p>
+            <h3>C++ Programming</h3>
+            <p>Variables, data types, operators, conditions, loops, arrays and functions, with an introduction to object-oriented programming.</p>
+            <ul class="tag-list"><li>C++</li><li>OOP</li></ul>
+            <a class="project-link" href="assets/projects/Cpp_Programming.pptx" download>Download PPTX · 35 slides</a>
+          </article>
+          <article class="card project">
+            <p class="project-kicker">Entri · May 2025</p>
+            <h3>Generative AI &amp; Prompt Engineering</h3>
+            <p>How generative AI and transformers work, applications, ethics, and basic and advanced prompting techniques.</p>
+            <ul class="tag-list"><li>AI</li><li>Prompting</li></ul>
+            <a class="project-link" href="assets/projects/Generative_AI_Prompt_Engineering.pptx" download>Download PPTX · 34 slides</a>
+          </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ===== CERTIFICATES ===== -->
-      <section class="certs card" id="certs" aria-labelledby="certsTitle">
-        <h2 id="certsTitle">Certificates</h2>
-        <!-- ODIN: Advanced selectors – :nth-child() and ::before style this list -->
-        <ol class="cert-list">
-          <li>Generative AI and Prompt Engineering Basics – Entri (May 2025)</li>
-          <li>Advanced Diploma in Programming through C++ – Entri (Apr 2025)</li>
-          <li>Information Technology Support – Udemy (Dec 2024)</li>
-          <li>10 AI courses – IBM SkillsBuild (AI Fundamentals, AI Literacy, Agentic AI and more)</li>
-        </ol>
-      </section>
+    <!-- ===== 7. THE ODIN PROJECT ===== -->
+    <section id="odin" class="section section-alt" aria-labelledby="odin-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">theodinproject.com</p>
+          <h2 id="odin-title">The Odin Project</h2>
+          <p class="section-intro">A free, open-source web development curriculum. For each course: what it covers, my presentation and screen recording, and all my practical work.</p>
+        </header>
 
-      <!-- ===== CONTACT FORM ===== -->
-      <!-- ODIN: Forms – sign-up/contact form with labels, input types, fieldset and validation -->
-      <section class="contact card" id="contact" aria-labelledby="contactTitle">
-        <h2 id="contactTitle">Contact me</h2>
-        <p class="muted">This demo form checks your input in the browser. Nothing is sent anywhere.</p>
+        <div class="tabs" role="tablist" aria-label="Odin courses">
+          <button class="tab" role="tab" id="tab-html" aria-controls="odin-html" aria-selected="true">Intermediate HTML &amp; CSS</button>
+          <button class="tab" role="tab" id="tab-foundations" aria-controls="odin-foundations" aria-selected="false" tabindex="-1">Foundations (Open Course)</button>
+          <button class="tab" role="tab" id="tab-js" aria-controls="odin-js" aria-selected="false" tabindex="-1">JavaScript</button>
+          <button class="tab" role="tab" id="tab-adv" aria-controls="odin-adv" aria-selected="false" tabindex="-1">Advanced HTML &amp; CSS <span class="badge-soon">soon</span></button>
+        </div>
 
-        <form class="form" id="contactForm" novalidate>
-          <!-- ODIN: Form basics – fieldset + legend group related inputs -->
-          <fieldset>
-            <legend>About you</legend>
-
-            <div class="field">
-              <label for="name">Full name <span aria-hidden="true">*</span></label>
-              <!-- ODIN: Form validation – required + minlength -->
-              <input id="name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="e.g. Anna Bērziņa">
-              <p class="hint">At least 2 characters.</p>
+        <!-- 7a. Intermediate HTML & CSS -->
+        <div class="tab-panel" role="tabpanel" id="odin-html" aria-labelledby="tab-html" tabindex="0">
+          <div class="course-top">
+            <div class="card course-overview">
+              <h3>Overview</h3>
+              <p>The next step after the basics: drawing with SVG, building tables, and a deep dive into CSS – units, selectors, positioning, functions, custom properties, forms and validation, and Grid layout. Two projects tie it together.</p>
+              <ul class="topic-list">
+                <li>SVG &amp; tables</li><li>Default styles &amp; CSS units</li><li>Text styles &amp; more properties</li>
+                <li>Advanced selectors</li><li>Positioning</li><li>CSS functions &amp; custom properties</li>
+                <li>Browser compatibility</li><li>Frameworks &amp; preprocessors</li><li>Form basics &amp; validation</li>
+                <li>CSS Grid</li><li>Flexbox + Grid</li>
+              </ul>
             </div>
-
-            <div class="field">
-              <label for="email">Email <span aria-hidden="true">*</span></label>
-              <!-- ODIN: Form basics – type="email" input -->
-              <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
-              <p class="hint">A valid email address, e.g. name@example.com.</p>
+            <div class="card course-media">
+              <h3>Presentation &amp; screen recording</h3>
+              <iframe class="drive-embed" title="Google Drive folder: Intermediate HTML &amp; CSS presentation and recording" loading="lazy"
+                src="https://drive.google.com/embeddedfolderview?id=1A6QT4F3Gkl8hSfOGzsHCAI9dBjMKD1kY#list"></iframe>
+              <a class="project-link" href="https://drive.google.com/drive/folders/1A6QT4F3Gkl8hSfOGzsHCAI9dBjMKD1kY?usp=sharing" target="_blank" rel="noopener">Open folder in Google Drive</a>
             </div>
+          </div>
 
-            <div class="field">
-              <label for="phone">Phone (optional)</label>
-              <!-- ODIN: Form validation – pattern attribute -->
-              <input id="phone" name="phone" type="tel" pattern="\+?[0-9 ]{7,15}" autocomplete="tel" placeholder="+371 20000000">
-              <p class="hint">Digits and spaces, 7–15 characters, may start with +.</p>
+          <h3 class="work-title">Practical work</h3>
+          <div class="work-grid">
+            <article class="card work">
+              <h4>Project: Sign-up Form</h4>
+              <p>A two-column sign-up page with styled inputs and HTML validation.</p>
+              <div class="work-links"><a href="odin/projects/sign-up-form/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/ashkar369.github.io/tree/main/odin/projects/sign-up-form" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="card work">
+              <h4>Project: Admin Dashboard</h4>
+              <p>A dashboard layout with a sidebar, header and card grid built with CSS Grid.</p>
+              <div class="work-links"><a href="odin/projects/admin-dashboard/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/ashkar369.github.io/tree/main/odin/projects/admin-dashboard" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="card work">
+              <h4>All HTML tags, explained</h4>
+              <p>Every MDN element with a plain explanation, a live example and its code.</p>
+              <div class="work-links"><a href="assets/tasks/all-html-tags.html" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/ashkar369.github.io/blob/main/assets/tasks/all-html-tags.html" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="card work">
+              <h4>This profile website</h4>
+              <p>Plain HTML, CSS and JavaScript, using Grid, Flexbox, custom properties and form validation.</p>
+              <div class="work-links"><a href="https://github.com/Ashkar369/ashkar369.github.io" target="_blank" rel="noopener">Code</a></div>
+            </article>
+          </div>
+
+          <h4 class="lesson-title">Lesson practice pages (20)</h4>
+          <ol class="lesson-list">
+            <li><a href="odin/01-introduction/practice.html" target="_blank" rel="noopener">Introduction</a></li>
+            <li><a href="odin/02-svg/practice.html" target="_blank" rel="noopener">SVG</a></li>
+            <li><a href="odin/03-tables/practice.html" target="_blank" rel="noopener">Tables</a></li>
+            <li><a href="odin/04-default-styles/practice.html" target="_blank" rel="noopener">Default Styles</a></li>
+            <li><a href="odin/05-css-units/practice.html" target="_blank" rel="noopener">CSS Units</a></li>
+            <li><a href="odin/06-more-text-styles/practice.html" target="_blank" rel="noopener">More Text Styles</a></li>
+            <li><a href="odin/07-more-css-properties/practice.html" target="_blank" rel="noopener">More CSS Properties</a></li>
+            <li><a href="odin/08-advanced-selectors/practice.html" target="_blank" rel="noopener">Advanced Selectors</a></li>
+            <li><a href="odin/09-positioning/practice.html" target="_blank" rel="noopener">Positioning</a></li>
+            <li><a href="odin/10-css-functions/practice.html" target="_blank" rel="noopener">CSS Functions</a></li>
+            <li><a href="odin/11-custom-properties/practice.html" target="_blank" rel="noopener">Custom Properties</a></li>
+            <li><a href="odin/12-browser-compatibility/practice.html" target="_blank" rel="noopener">Browser Compatibility</a></li>
+            <li><a href="odin/13-frameworks-and-preprocessors/practice.html" target="_blank" rel="noopener">Frameworks &amp; Preprocessors</a></li>
+            <li><a href="odin/14-form-basics/practice.html" target="_blank" rel="noopener">Form Basics</a></li>
+            <li><a href="odin/15-form-validation/practice.html" target="_blank" rel="noopener">Form Validation</a></li>
+            <li><a href="odin/16-introduction-to-grid/practice.html" target="_blank" rel="noopener">Introduction to Grid</a></li>
+            <li><a href="odin/17-creating-a-grid/practice.html" target="_blank" rel="noopener">Creating a Grid</a></li>
+            <li><a href="odin/18-positioning-grid-elements/practice.html" target="_blank" rel="noopener">Positioning Grid Elements</a></li>
+            <li><a href="odin/19-advanced-grid-properties/practice.html" target="_blank" rel="noopener">Advanced Grid Properties</a></li>
+            <li><a href="odin/20-using-flexbox-and-grid/practice.html" target="_blank" rel="noopener">Using Flexbox and Grid</a></li>
+          </ol>
+        </div>
+
+        <!-- 7b. Foundations (Open Course) -->
+        <div class="tab-panel" role="tabpanel" id="odin-foundations" aria-labelledby="tab-foundations" tabindex="0" hidden>
+          <div class="course-top">
+            <div class="card course-overview">
+              <h3>Overview</h3>
+              <p>The Foundations course is the start of The Odin Project. I completed its JavaScript Basics section: the core of the language, problem solving, clean code, and using the DOM to make pages interactive. Three projects put it into practice.</p>
+              <ul class="topic-list">
+                <li>Variables &amp; operators</li><li>Node.js &amp; DevTools</li><li>Data types &amp; conditionals</li>
+                <li>Functions</li><li>Problem solving &amp; errors</li><li>Clean code</li>
+                <li>Loops &amp; arrays</li><li>DOM manipulation &amp; events</li><li>Object basics</li>
+              </ul>
             </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Your message</legend>
-
-            <div class="field">
-              <label for="topic">Topic</label>
-              <select id="topic" name="topic">
-                <option>Internship</option>
-                <option>Photography</option>
-                <option>Study at RNU</option>
-                <option>Something else</option>
-              </select>
+            <div class="card course-media">
+              <h3>Presentation &amp; screen recording</h3>
+              <iframe class="drive-embed" title="Google Drive folder: JavaScript Basics presentation and recording" loading="lazy"
+                src="https://drive.google.com/embeddedfolderview?id=1udHoJwkVtjaaCKImEBN5OOLGwJatileo#list"></iframe>
+              <a class="project-link" href="https://drive.google.com/drive/folders/1udHoJwkVtjaaCKImEBN5OOLGwJatileo?usp=sharing" target="_blank" rel="noopener">Open folder in Google Drive</a>
             </div>
+          </div>
 
-            <div class="field">
-              <label for="message">Message <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="4" required minlength="10" placeholder="Write at least 10 characters"></textarea>
+          <h3 class="work-title">Practical work</h3>
+          <div class="work-grid">
+            <article class="card work">
+              <h4>JavaScript Basics lessons</h4>
+              <p>All my exercises from the JavaScript Basics lessons in one place.</p>
+              <div class="work-links"><a href="https://ashkar369.github.io/odin-js-basics-lessons/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/odin-js-basics-lessons" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="card work">
+              <h4>Project: Rock Paper Scissors</h4>
+              <p>Play against the computer – first in the console, then rebuilt with buttons and a score.</p>
+              <div class="work-links"><a href="https://ashkar369.github.io/odin-rock-paper-scissors/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/odin-rock-paper-scissors" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="card work">
+              <h4>Project: Etch-a-Sketch</h4>
+              <p>A drawing grid made with DOM manipulation. Squares change colour on hover; pick any grid size.</p>
+              <div class="work-links"><a href="https://ashkar369.github.io/odin-etch-a-sketch/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/odin-etch-a-sketch" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="card work">
+              <h4>Project: Calculator</h4>
+              <p>An on-screen calculator built from small functions and button events.</p>
+              <div class="work-links"><a href="https://ashkar369.github.io/odin-calculator/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/odin-calculator" target="_blank" rel="noopener">Code</a></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 7c. JavaScript -->
+        <div class="tab-panel" role="tabpanel" id="odin-js" aria-labelledby="tab-js" tabindex="0" hidden>
+          <div class="course-top">
+            <div class="card course-overview">
+              <h3>Overview</h3>
+              <p>The JavaScript course teaches how to organize bigger programs. I worked through the "Organizing Your JavaScript Code" section: objects, object constructors and prototypes, factory functions, closures and the module pattern.</p>
+              <ul class="topic-list">
+                <li>Organizing code with objects</li><li>Object constructors</li><li>Prototypes &amp; inheritance</li>
+                <li>Factory functions</li><li>Scope &amp; closures</li><li>The module pattern (IIFE)</li>
+              </ul>
             </div>
-
-            <div class="field field--check">
-              <input id="consent" name="consent" type="checkbox" required>
-              <label for="consent">I understand this is a demo form <span aria-hidden="true">*</span></label>
+            <div class="card course-media">
+              <h3>Presentation &amp; screen recording</h3>
+              <iframe class="drive-embed" title="Google Drive folder: JavaScript course presentation and recording" loading="lazy"
+                src="https://drive.google.com/embeddedfolderview?id=1sLlEe94fcdJJcR962lTYD8pyDOno_rcm#list"></iframe>
+              <a class="project-link" href="https://drive.google.com/drive/folders/1sLlEe94fcdJJcR962lTYD8pyDOno_rcm?usp=sharing" target="_blank" rel="noopener">Open folder in Google Drive</a>
             </div>
-          </fieldset>
+          </div>
 
-          <button class="btn btn--primary" type="submit">Check &amp; send</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
+          <h3 class="work-title">Practical work</h3>
+          <div class="work-grid">
+            <article class="card work">
+              <h4>Project: Library</h4>
+              <p>Add books in a dialog form, toggle read status and remove books. Built with constructors and prototypes.</p>
+              <div class="work-links"><a href="https://ashkar369.github.io/odin-library/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/odin-library" target="_blank" rel="noopener">Code</a></div>
+            </article>
+            <article class="card work">
+              <h4>Project: Tic Tac Toe</h4>
+              <p>Two players, win and tie detection, score counter and restart. Built with factories and modules.</p>
+              <div class="work-links"><a href="https://ashkar369.github.io/odin-tic-tac-toe/" target="_blank" rel="noopener">Live</a><a href="https://github.com/Ashkar369/odin-tic-tac-toe" target="_blank" rel="noopener">Code</a></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- 7d. Advanced HTML & CSS (coming soon) -->
+        <div class="tab-panel" role="tabpanel" id="odin-adv" aria-labelledby="tab-adv" tabindex="0" hidden>
+          <div class="card soon-card">
+            <span class="badge-soon">Coming soon</span>
+            <h3>Advanced HTML &amp; CSS</h3>
+            <p>This course covers animation and transforms, accessibility, responsive design and more. My presentation, screen recording and practical work will appear here once I complete it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 8. HOMEWORK ===== -->
+    <section id="homework" class="section" aria-labelledby="homework-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Questions &amp; answers</p>
+          <h2 id="homework-title">Homework</h2>
+        </header>
+        <div class="card soon-card">
+          <span class="badge-soon">Coming soon</span>
+          <h3>No homework added yet</h3>
+          <p>Each homework will get its own card here: the question, my answer, a code snippet with its output, and a link to the file, PDF or presentation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 9. CONTACT ===== -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Say hello</p>
+          <h2 id="contact-title">Contact me</h2>
+          <p class="section-intro">Questions about my projects, internships or studying at RNU? Fill in the form and it opens your email app with the message ready to send.</p>
+          <p class="contact-email">
+            <span class="selectable" id="email-text">ashkarsiyad7@gmail.com</span>
+            <button class="btn btn-ghost btn-small" type="button" id="copy-email">Copy</button>
+          </p>
+        </div>
+
+        <form class="card contact-form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" name="name" type="text" required minlength="2" autocomplete="name">
+            <p class="field-error" id="cf-name-error">Please enter at least 2 characters.</p>
+          </div>
+          <div class="field">
+            <label for="cf-email">Your email</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email">
+            <p class="field-error" id="cf-email-error">Please enter a valid email, e.g. name@example.com.</p>
+          </div>
+          <div class="field">
+            <label for="cf-topic">Topic</label>
+            <select id="cf-topic" name="topic">
+              <option>Projects</option>
+              <option>Internship</option>
+              <option>Studying at RNU</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required minlength="10"></textarea>
+            <p class="field-error" id="cf-message-error">Please write at least 10 characters.</p>
+          </div>
+          <button class="btn btn-primary" type="submit">Open in email app</button>
+          <p class="form-status" id="form-status" role="status"></p>
         </form>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
 
-    <!-- ===== SIDEBAR (social links) ===== -->
-    <aside class="sidebar" aria-label="Contact links">
-      <h2 class="sidebar__title">Find me</h2>
-      <!-- ODIN: Advanced selectors – attribute selectors style links by their href -->
-      <ul class="social">
-        <li>
-          <a href="mailto:ashkarsiyad7@gmail.com">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z"/></svg>
-            ashkarsiyad7@gmail.com
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/Ashkar369">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.9-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
-            GitHub
-          </a>
-        </li>
-        <li>
-          <a href="[LINKEDIN-URL]">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2 9h4v12H2zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>
-            LinkedIn
-          </a>
-        </li>
-      </ul>
-      <p class="sidebar__loc">📍 Riga, Latvia</p>
-    </aside>
-
-    <footer class="site-footer">
-      <p>© 2026 Ashkar Siyad · Built with plain HTML &amp; CSS · <a href="#top">Back to top</a></p>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Ashkar Siyad · Built with plain HTML, CSS and JavaScript</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

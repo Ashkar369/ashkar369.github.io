@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>16 Introduction to Grid – practice</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+    .box { background: #2a7ae2; color: white; padding: 1.2rem; border-radius: 8px; text-align: center; font-weight: bold; }
+    .flex { display: flex; flex-wrap: wrap; gap: 10px; }
+    .flex .box { flex: 1 1 180px; }          /* last row stretches */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }  /* stays in columns */
+    .grid .box { background: #6a11cb; }
+  </style>
+</head>
+<body>
+  <h1>Flexbox vs Grid</h1>
+  <h2>Flexbox (one direction, wraps)</h2>
+  <div class="flex"><div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div><div class="box">6</div><div class="box">7</div></div>
+  <p>Look at box 7: Flexbox stretches it across the whole last row.</p>
+  <h2>Grid (rows and columns)</h2>
+  <div class="grid"><div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div><div class="box">6</div><div class="box">7</div></div>
+  <p>With Grid, box 7 stays in the first column – everything lines up.</p>
+</body>
+</html>

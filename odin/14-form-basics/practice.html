@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>14 Form Basics – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="#" method="post" onsubmit="event.preventDefault(); alert('Demo only – nothing was sent.');">
+    <h1>Student registration</h1>
+
+    <label for="full-name">Full name</label>
+    <input id="full-name" name="full_name" type="text" placeholder="Ashkar Siyad">
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="ashkar@example.com">
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+
+    <label for="birthday">Date of birth</label>
+    <input id="birthday" name="birthday" type="date">
+
+    <label for="programme">Programme</label>
+    <select id="programme" name="programme">
+      <optgroup label="Bachelor">
+        <option>Information Systems</option>
+        <option>Computer Science</option>
+      </optgroup>
+      <optgroup label="Master">
+        <option>Data Science</option>
+      </optgroup>
+    </select>
+
+    <fieldset>
+      <legend>Study year</legend>
+      <label><input type="radio" name="year" value="1"> 1st</label>
+      <label><input type="radio" name="year" value="2"> 2nd</label>
+      <label><input type="radio" name="year" value="3" checked> 3rd</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Interests</legend>
+      <label><input type="checkbox" name="interest" value="web" checked> Web</label>
+      <label><input type="checkbox" name="interest" value="ai"> AI</label>
+      <label><input type="checkbox" name="interest" value="cloud"> Cloud</label>
+    </fieldset>
+
+    <label for="level">How good is your HTML? (1–10)</label>
+    <input id="level" name="level" type="range" min="1" max="10" value="7">
+
+    <label for="colour">Favourite colour</label>
+    <input id="colour" name="colour" type="color" value="#2a7ae2">
+
+    <label for="cv">Upload CV</label>
+    <input id="cv" name="cv" type="file">
+
+    <label for="about">About you</label>
+    <textarea id="about" name="about" rows="4" placeholder="A few words about you…"></textarea>
+
+    <div class="buttons">
+      <button type="submit">Register</button>
+      <button type="reset">Clear</button>
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,8 @@
+body { font-family: system-ui, sans-serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 2rem; }
+caption { font-weight: bold; font-size: 1.2rem; padding: .5rem; caption-side: top; }
+th, td { border: 1px solid #9aa9bd; padding: .45rem .7rem; text-align: left; }
+thead th { background: #1f3a5f; color: white; }
+tbody tr:nth-child(even) { background: #f1f5fa; }
+tfoot td, tfoot th { background: #ffe9a8; font-weight: bold; }
+.highlight-col { background: #e6f4ea; }

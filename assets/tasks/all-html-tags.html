@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- These head tags are also explained in the "Document metadata" section below -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Every HTML element from the MDN reference, explained simply with live examples.">
+  <title>All HTML Tags – Ashkar Siyad</title>
+  <base target="_self">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%98%3C/text%3E%3C/svg%3E">
+  <style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; line-height: 1.55; max-width: 980px; margin: 0 auto; padding: 16px; color: #1d2330; background: #fafbfc; }
+  header.top { background: #1f3a5f; color: #fff; padding: 18px 20px; border-radius: 10px; }
+  header.top h1 { margin: 0 0 4px; }
+  header.top p { margin: 0; }
+  nav.toc { background: #fff; border: 1px solid #d8dee8; border-radius: 10px; padding: 10px 18px; margin: 18px 0; }
+  nav.toc ol { columns: 2; margin: 6px 0; }
+  section.cat { background: #fff; border: 1px solid #d8dee8; border-radius: 10px; padding: 6px 18px 14px; margin: 22px 0; }
+  section.cat > h2 { border-bottom: 3px solid #2a7ae2; padding-bottom: 4px; }
+  .el { border-top: 1px dashed #c9d2df; padding: 10px 0; }
+  .el h3 { margin: 4px 0; font-size: 1.15em; }
+  .demo { border: 2px solid #b8d4f5; background: #f4f9ff; border-radius: 8px; padding: 10px; margin: 6px 0; overflow-x: auto; }
+  .demo-label, .code-label { font-size: .8em; text-transform: uppercase; letter-spacing: .05em; color: #5b6b80; margin: 6px 0 2px; }
+  pre { background: #1e2533; color: #e6edf6; padding: 10px; border-radius: 8px; overflow-x: auto; font-size: .88em; }
+  pre code { background: none; color: inherit; padding: 0; }
+  code { background: #eef1f6; padding: 1px 4px; border-radius: 4px; }
+  .note { background: #fff7e0; border-left: 4px solid #f2b705; padding: 6px 10px; margin: 6px 0; font-size: .95em; }
+  .old { color: #a32020; font-weight: bold; }
+  table.obsolete { border-collapse: collapse; width: 100%; }
+  table.obsolete th, table.obsolete td { border: 1px solid #ccd5e1; padding: 6px 8px; text-align: left; vertical-align: top; }
+  .demo table { border-collapse: collapse; }
+  .demo td, .demo th { border: 1px solid #9fb3cc; padding: 4px 8px; }
+  .back { font-size: .85em; }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <h1>All HTML Tags – Explained Simply</h1>
+  <p><strong>By Ashkar Siyad</strong> · Web Technologies · RNU (Riga Nordic University)</p>
+  <p>Every element from the MDN HTML elements reference, with a simple explanation, a live example and its code.</p>
+</header>
+
+<nav class="toc" id="toc">
+  <h2>Table of contents</h2>
+  <ol>
+    <li><a href="#main-root">Main root</a></li>
+    <li><a href="#metadata">Document metadata</a></li>
+    <li><a href="#sectioning-root">Sectioning root</a></li>
+    <li><a href="#content-sectioning">Content sectioning</a></li>
+    <li><a href="#text-content">Text content</a></li>
+    <li><a href="#inline-text">Inline text semantics</a></li>
+    <li><a href="#multimedia">Image and multimedia</a></li>
+    <li><a href="#embedded">Embedded content</a></li>
+    <li><a href="#svg-mathml">SVG and MathML</a></li>
+    <li><a href="#scripting">Scripting</a></li>
+    <li><a href="#edits">Demarcating edits</a></li>
+    <li><a href="#table-content">Table content</a></li>
+    <li><a href="#forms">Forms</a></li>
+    <li><a href="#interactive">Interactive elements</a></li>
+    <li><a href="#web-components">Web Components</a></li>
+    <li><a href="#obsolete">Obsolete and deprecated</a></li>
+  </ol>
+</nav>
+
+<!-- ===== Main root ===== -->
+<section class="cat" id="main-root">
+  <h2>Main root</h2>
+  <p>The one tag that holds the whole page.</p>
+  <div class="el" id="el-html">
+    <h3><code>&lt;html&gt;</code></h3>
+    <p>The box that holds the whole web page. Everything else goes inside it, and every page has exactly one.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p class="note">This page itself starts with <code>&lt;html lang="en"&gt;</code> at the very top of the file.</p>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Document metadata ===== -->
+<section class="cat" id="metadata">
+  <h2>Document metadata</h2>
+  <p>Tags that live in the &lt;head&gt;. They give the browser information about the page but do not show anything on the page itself.</p>
+  <div class="el" id="el-base">
+    <h3><code>&lt;base&gt;</code></h3>
+    <p>Sets a default address or default way of opening links for the whole page, so you do not have to repeat it on every link.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;base target=&quot;_self&quot;&gt;</code></pre>
+    <p class="note">This page's &lt;head&gt; uses <code>&lt;base target="_self"&gt;</code>: every link opens in the same tab unless the link says otherwise.</p>
+  </div>
+  <div class="el" id="el-head">
+    <h3><code>&lt;head&gt;</code></h3>
+    <p>The "backstage" part of the page. It holds the title, settings and styles, and nothing in it is shown as page content.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;My page&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+    <p class="note">This page's &lt;head&gt; holds its meta tags, title, base, link and style.</p>
+  </div>
+  <div class="el" id="el-link">
+    <h3><code>&lt;link&gt;</code></h3>
+    <p>Connects the page to another file, most often a CSS file or the little icon shown in the browser tab.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;favicon.png&quot;&gt;</code></pre>
+    <p class="note">This page's &lt;head&gt; uses <code>&lt;link rel="icon"&gt;</code> to set the tab icon (an emoji drawn as SVG).</p>
+  </div>
+  <div class="el" id="el-meta">
+    <h3><code>&lt;meta&gt;</code></h3>
+    <p>Small pieces of settings about the page, for example which letters it uses (UTF-8) or how it should fit on a phone screen.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</code></pre>
+    <p class="note">This page's &lt;head&gt; has three: charset, viewport and description.</p>
+  </div>
+  <div class="el" id="el-style">
+    <h3><code>&lt;style&gt;</code></h3>
+    <p>A place to write CSS right inside the HTML file, to change colours, sizes and layout.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;style&gt;
+  p { color: navy; }
+&lt;/style&gt;</code></pre>
+    <p class="note">This page's &lt;head&gt; has one &lt;style&gt; block that makes the page easy to read.</p>
+  </div>
+  <div class="el" id="el-title">
+    <h3><code>&lt;title&gt;</code></h3>
+    <p>The name of the page. It shows on the browser tab and in Google results, not on the page itself.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;title&gt;All HTML Tags – Ashkar Siyad&lt;/title&gt;</code></pre>
+    <p class="note">Look at your browser tab: it shows this page's &lt;title&gt;.</p>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Sectioning root ===== -->
+<section class="cat" id="sectioning-root">
+  <h2>Sectioning root</h2>
+  <p>The part of the page you actually see.</p>
+  <div class="el" id="el-body">
+    <h3><code>&lt;body&gt;</code></h3>
+    <p>Holds everything that is visible on the page: text, pictures, buttons and so on. A page has only one.</p>
+    <div class="code-label">Code (can't be shown as a live example – it only goes in the page structure or the &lt;head&gt;, once)</div>
+    <pre><code>&lt;body&gt;
+  &lt;h1&gt;Hello!&lt;/h1&gt;
+  &lt;p&gt;Everything you see goes here.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+    <p class="note">Everything you are reading right now is inside this page's &lt;body&gt;.</p>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Content sectioning ===== -->
+<section class="cat" id="content-sectioning">
+  <h2>Content sectioning</h2>
+  <p>Tags that split a page into big meaningful parts, like the chapters of a book.</p>
+  <div class="el" id="el-address">
+    <h3><code>&lt;address&gt;</code></h3>
+    <p>Contact details for a person or company, such as an email or a postal address.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<address>Ashkar Siyad<br>Riga, Latvia<br><a href="mailto:ashkar@example.com">ashkar@example.com</a></address>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;address&gt;Ashkar Siyad&lt;br&gt;Riga, Latvia&lt;br&gt;&lt;a href=&quot;mailto:ashkar@example.com&quot;&gt;ashkar@example.com&lt;/a&gt;&lt;/address&gt;</code></pre>
+  </div>
+  <div class="el" id="el-article">
+    <h3><code>&lt;article&gt;</code></h3>
+    <p>A piece of content that makes sense on its own, like a blog post, news story or comment.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<article>
+  <h4>My first blog post</h4>
+  <p>Today I learned HTML!</p>
+</article>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;article&gt;
+  &lt;h4&gt;My first blog post&lt;/h4&gt;
+  &lt;p&gt;Today I learned HTML!&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+  </div>
+  <div class="el" id="el-aside">
+    <h3><code>&lt;aside&gt;</code></h3>
+    <p>Side information that is related to the main text but not part of it, like a "Did you know?" box.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<aside>Did you know? HTML was invented in 1991.</aside>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;aside&gt;Did you know? HTML was invented in 1991.&lt;/aside&gt;</code></pre>
+  </div>
+  <div class="el" id="el-footer">
+    <h3><code>&lt;footer&gt;</code></h3>
+    <p>The bottom part of a page or section, usually with copyright, contacts or links.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<footer>© 2026 Ashkar Siyad</footer>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;footer&gt;© 2026 Ashkar Siyad&lt;/footer&gt;</code></pre>
+  </div>
+  <div class="el" id="el-header">
+    <h3><code>&lt;header&gt;</code></h3>
+    <p>The top part of a page or section, usually with a logo, title or menu.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<header>
+  <strong>My Website</strong> – welcome!
+</header>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;header&gt;
+  &lt;strong&gt;My Website&lt;/strong&gt; – welcome!
+&lt;/header&gt;</code></pre>
+  </div>
+  <div class="el" id="el-h1">
+    <h3><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code></h3>
+    <p>Headings from biggest and most important (h1) to smallest (h6). Like titles and subtitles in a school report.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;</code></pre>
+  </div>
+  <div class="el" id="el-hgroup">
+    <h3><code>&lt;hgroup&gt;</code></h3>
+    <p>Groups a heading together with a small subtitle line that belongs to it.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<hgroup>
+  <h4>Riga Nordic University</h4>
+  <p>Information Systems programme</p>
+</hgroup>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;hgroup&gt;
+  &lt;h4&gt;Riga Nordic University&lt;/h4&gt;
+  &lt;p&gt;Information Systems programme&lt;/p&gt;
+&lt;/hgroup&gt;</code></pre>
+  </div>
+  <div class="el" id="el-main">
+    <h3><code>&lt;main&gt;</code></h3>
+    <p>The main content of the page – the part that is unique to this page. Use it only once per page.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<main>
+  <p>This is the most important part of a page.</p>
+</main>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;main&gt;
+  &lt;p&gt;This is the most important part of a page.&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+    <p class="note">This page only uses &lt;main&gt; here, as an example, because a page should have just one.</p>
+  </div>
+  <div class="el" id="el-nav">
+    <h3><code>&lt;nav&gt;</code></h3>
+    <p>A group of main navigation links, like the menu of a website.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<nav>
+  <a href="#main-root">Home</a> |
+  <a href="#forms">Forms</a> |
+  <a href="#table-content">Tables</a>
+</nav>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;nav&gt;
+  &lt;a href=&quot;#main-root&quot;&gt;Home&lt;/a&gt; |
+  &lt;a href=&quot;#forms&quot;&gt;Forms&lt;/a&gt; |
+  &lt;a href=&quot;#table-content&quot;&gt;Tables&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+  </div>
+  <div class="el" id="el-section">
+    <h3><code>&lt;section&gt;</code></h3>
+    <p>A part of the page about one topic, usually with its own heading. This whole page uses one section per category.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<section>
+  <h4>My hobbies</h4>
+  <p>Football and photography.</p>
+</section>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;section&gt;
+  &lt;h4&gt;My hobbies&lt;/h4&gt;
+  &lt;p&gt;Football and photography.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+  </div>
+  <div class="el" id="el-search">
+    <h3><code>&lt;search&gt;</code></h3>
+    <p>Wraps a search box, so browsers and screen readers know "this part is for searching".</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<search>
+  <form>
+    <input type="search" placeholder="Search tags…">
+    <button type="button">Search</button>
+  </form>
+</search>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;search&gt;
+  &lt;form&gt;
+    &lt;input type=&quot;search&quot; placeholder=&quot;Search tags…&quot;&gt;
+    &lt;button type=&quot;button&quot;&gt;Search&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/search&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Text content ===== -->
+<section class="cat" id="text-content">
+  <h2>Text content</h2>
+  <p>Tags that organise blocks of text: paragraphs, lists, quotes and so on.</p>
+  <div class="el" id="el-blockquote">
+    <h3><code>&lt;blockquote&gt;</code></h3>
+    <p>A longer quote taken from someone else, shown as its own block.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<blockquote cite="https://example.com">
+  Learning never exhausts the mind.
+</blockquote>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;blockquote cite=&quot;https://example.com&quot;&gt;
+  Learning never exhausts the mind.
+&lt;/blockquote&gt;</code></pre>
+  </div>
+  <div class="el" id="el-dd">
+    <h3><code>&lt;dd&gt;</code></h3>
+    <p>The description part in a description list (&lt;dl&gt;). It explains the word above it.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<dl>
+  <dt>HTML</dt>
+  <dd>The language that builds web pages.</dd>
+</dl>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;The language that builds web pages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+  </div>
+  <div class="el" id="el-div">
+    <h3><code>&lt;div&gt;</code></h3>
+    <p>A plain box with no special meaning. You use it to group things so you can style them with CSS.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<div style="border:1px solid #888; padding:6px;">I am inside a div box.</div>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;div style=&quot;border:1px solid #888; padding:6px;&quot;&gt;I am inside a div box.&lt;/div&gt;</code></pre>
+  </div>
+  <div class="el" id="el-dl">
+    <h3><code>&lt;dl&gt;</code></h3>
+    <p>A description list – like a mini dictionary with words and their meanings.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<dl>
+  <dt>CSS</dt>
+  <dd>Makes web pages look nice.</dd>
+  <dt>JS</dt>
+  <dd>Makes web pages do things.</dd>
+</dl>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;dl&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Makes web pages look nice.&lt;/dd&gt;
+  &lt;dt&gt;JS&lt;/dt&gt;
+  &lt;dd&gt;Makes web pages do things.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+  </div>
+  <div class="el" id="el-dt">
+    <h3><code>&lt;dt&gt;</code></h3>
+    <p>The word or term in a description list. Its meaning comes after it in a &lt;dd&gt;.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<dl>
+  <dt>Browser</dt>
+  <dd>The app you use to open websites.</dd>
+</dl>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;dl&gt;
+  &lt;dt&gt;Browser&lt;/dt&gt;
+  &lt;dd&gt;The app you use to open websites.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+  </div>
+  <div class="el" id="el-figcaption">
+    <h3><code>&lt;figcaption&gt;</code></h3>
+    <p>The caption under (or above) a picture inside a &lt;figure&gt;.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg" alt="Example picture" width="120">
+  <figcaption>This is a caption.</figcaption>
+</figure>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;figure&gt;
+  &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg&quot; alt=&quot;Example picture&quot; width=&quot;120&quot;&gt;
+  &lt;figcaption&gt;This is a caption.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+  </div>
+  <div class="el" id="el-figure">
+    <h3><code>&lt;figure&gt;</code></h3>
+    <p>A box for a picture, chart or code example together with its caption.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aurora_borealis_over_Saana_fell.jpg/960px-Aurora_borealis_over_Saana_fell.jpg" alt="Northern lights over Saana fell" width="220">
+  <figcaption>Northern lights in Finland.</figcaption>
+</figure>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;figure&gt;
+  &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aurora_borealis_over_Saana_fell.jpg/960px-Aurora_borealis_over_Saana_fell.jpg&quot; alt=&quot;Northern lights over Saana fell&quot; width=&quot;220&quot;&gt;
+  &lt;figcaption&gt;Northern lights in Finland.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+  </div>
+  <div class="el" id="el-hr">
+    <h3><code>&lt;hr&gt;</code></h3>
+    <p>A line that separates two different topics on a page.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Topic one</p>
+<hr>
+<p>Topic two</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Topic one&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Topic two&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-li">
+    <h3><code>&lt;li&gt;</code></h3>
+    <p>One item in a list (ordered, unordered or menu).</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<ul>
+  <li>Bread</li>
+  <li>Milk</li>
+</ul>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;ul&gt;
+  &lt;li&gt;Bread&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+  <div class="el" id="el-menu">
+    <h3><code>&lt;menu&gt;</code></h3>
+    <p>A list of commands or buttons, like a toolbar. It works like &lt;ul&gt; but is meant for actions.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<menu>
+  <li><button type="button">Copy</button></li>
+  <li><button type="button">Paste</button></li>
+</menu>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;menu&gt;
+  &lt;li&gt;&lt;button type=&quot;button&quot;&gt;Copy&lt;/button&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;button type=&quot;button&quot;&gt;Paste&lt;/button&gt;&lt;/li&gt;
+&lt;/menu&gt;</code></pre>
+  </div>
+  <div class="el" id="el-ol">
+    <h3><code>&lt;ol&gt;</code></h3>
+    <p>A numbered list – use it when the order matters, like steps in a recipe.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<ol>
+  <li>Boil water</li>
+  <li>Add pasta</li>
+  <li>Eat!</li>
+</ol>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;ol&gt;
+  &lt;li&gt;Boil water&lt;/li&gt;
+  &lt;li&gt;Add pasta&lt;/li&gt;
+  &lt;li&gt;Eat!&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+  </div>
+  <div class="el" id="el-p">
+    <h3><code>&lt;p&gt;</code></h3>
+    <p>A normal paragraph of text.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>This is a paragraph. It can hold many sentences.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;This is a paragraph. It can hold many sentences.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-pre">
+    <h3><code>&lt;pre&gt;</code></h3>
+    <p>Shows text exactly as you typed it, keeping all spaces and line breaks. Great for code and poems.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<pre>
+Line one
+    Line two (indented)
+        Line three
+</pre>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;pre&gt;
+Line one
+    Line two (indented)
+        Line three
+&lt;/pre&gt;</code></pre>
+  </div>
+  <div class="el" id="el-ul">
+    <h3><code>&lt;ul&gt;</code></h3>
+    <p>A bullet-point list – use it when the order does not matter, like a shopping list.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<ul>
+  <li>Apples</li>
+  <li>Bananas</li>
+</ul>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Bananas&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Inline text semantics ===== -->
+<section class="cat" id="inline-text">
+  <h2>Inline text semantics</h2>
+  <p>Small tags used inside a line of text to give some words a special meaning or look.</p>
+  <div class="el" id="el-a">
+    <h3><code>&lt;a&gt;</code></h3>
+    <p>A link. Click it to go to another page, another place on this page, or to send an email.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<a href="https://developer.mozilla.org" target="_blank">Visit MDN</a> or
+<a href="#forms">jump to Forms</a>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;a href=&quot;https://developer.mozilla.org&quot; target=&quot;_blank&quot;&gt;Visit MDN&lt;/a&gt; or
+&lt;a href=&quot;#forms&quot;&gt;jump to Forms&lt;/a&gt;</code></pre>
+  </div>
+  <div class="el" id="el-abbr">
+    <h3><code>&lt;abbr&gt;</code></h3>
+    <p>A short form of a word. Hover over it to see the full meaning.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<abbr title="Riga Nordic University">RNU</abbr> is my university.
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;abbr title=&quot;Riga Nordic University&quot;&gt;RNU&lt;/abbr&gt; is my university.</code></pre>
+  </div>
+  <div class="el" id="el-b">
+    <h3><code>&lt;b&gt;</code></h3>
+    <p>Makes text bold just to catch the eye, without saying it is more important.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Keywords: <b>HTML</b>, <b>CSS</b></p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Keywords: &lt;b&gt;HTML&lt;/b&gt;, &lt;b&gt;CSS&lt;/b&gt;&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-bdi">
+    <h3><code>&lt;bdi&gt;</code></h3>
+    <p>Keeps text in a different writing direction (like Arabic) from messing up the text around it.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>User <bdi>إيان</bdi>: 90 points</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;User &lt;bdi&gt;إيان&lt;/bdi&gt;: 90 points&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-bdo">
+    <h3><code>&lt;bdo&gt;</code></h3>
+    <p>Forces text to be written in a direction you choose, for example right-to-left.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p><bdo dir="rtl">Hello world</bdo></p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;&lt;bdo dir=&quot;rtl&quot;&gt;Hello world&lt;/bdo&gt;&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-br">
+    <h3><code>&lt;br&gt;</code></h3>
+    <p>A line break – like pressing Enter in the middle of a paragraph.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Roses are red,<br>violets are blue.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Roses are red,&lt;br&gt;violets are blue.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-cite">
+    <h3><code>&lt;cite&gt;</code></h3>
+    <p>The title of a creative work, like a book, film or song.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>My favourite film is <cite>Interstellar</cite>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;My favourite film is &lt;cite&gt;Interstellar&lt;/cite&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-code">
+    <h3><code>&lt;code&gt;</code></h3>
+    <p>Shows a short piece of computer code in a typewriter-style font.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Use <code>&lt;p&gt;</code> for paragraphs.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Use &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; for paragraphs.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-data">
+    <h3><code>&lt;data&gt;</code></h3>
+    <p>Shows text for people and hides a machine-readable value for computers behind it.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Product: <data value="12345">Blue T-shirt</data></p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Product: &lt;data value=&quot;12345&quot;&gt;Blue T-shirt&lt;/data&gt;&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-dfn">
+    <h3><code>&lt;dfn&gt;</code></h3>
+    <p>Marks the word that is being defined in a sentence.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p><dfn>HTML</dfn> is the language used to build web pages.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;&lt;dfn&gt;HTML&lt;/dfn&gt; is the language used to build web pages.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-em">
+    <h3><code>&lt;em&gt;</code></h3>
+    <p>Stresses a word, like when you say it louder. Usually shown in italics.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>I <em>really</em> love pizza.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; love pizza.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-i">
+    <h3><code>&lt;i&gt;</code></h3>
+    <p>Italic text for things like foreign words, thoughts or technical terms, without extra stress.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>The word <i>labdien</i> means "good day" in Latvian.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;The word &lt;i&gt;labdien&lt;/i&gt; means &quot;good day&quot; in Latvian.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-kbd">
+    <h3><code>&lt;kbd&gt;</code></h3>
+    <p>Shows keys the user should press on the keyboard.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; to save.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-mark">
+    <h3><code>&lt;mark&gt;</code></h3>
+    <p>Like a highlighter pen – it makes words stand out with a yellow background.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Don't forget the <mark>exam on Friday</mark>!</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Don&#x27;t forget the &lt;mark&gt;exam on Friday&lt;/mark&gt;!&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-q">
+    <h3><code>&lt;q&gt;</code></h3>
+    <p>A short quote inside a sentence. The browser adds the quote marks for you.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>My teacher said <q>Practice every day</q>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;My teacher said &lt;q&gt;Practice every day&lt;/q&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-rp">
+    <h3><code>&lt;rp&gt;</code></h3>
+    <p>Fallback brackets for ruby text, shown only in browsers that cannot show ruby properly.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<ruby>漢<rp>(</rp><rt>kan</rt><rp>)</rp></ruby>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;ruby&gt;漢&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;kan&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</code></pre>
+  </div>
+  <div class="el" id="el-rt">
+    <h3><code>&lt;rt&gt;</code></h3>
+    <p>The small pronunciation text shown above a character in ruby annotations.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<ruby>字<rt>ji</rt></ruby>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;ruby&gt;字&lt;rt&gt;ji&lt;/rt&gt;&lt;/ruby&gt;</code></pre>
+  </div>
+  <div class="el" id="el-ruby">
+    <h3><code>&lt;ruby&gt;</code></h3>
+    <p>Adds small helper text (usually pronunciation) above East Asian characters.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<ruby>東京<rp>(</rp><rt>Tōkyō</rt><rp>)</rp></ruby>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;ruby&gt;東京&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;Tōkyō&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</code></pre>
+  </div>
+  <div class="el" id="el-s">
+    <h3><code>&lt;s&gt;</code></h3>
+    <p>Crosses out text that is no longer correct, like an old price.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Price: <s>€50</s> €35</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Price: &lt;s&gt;€50&lt;/s&gt; €35&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-samp">
+    <h3><code>&lt;samp&gt;</code></h3>
+    <p>Shows example output from a computer program.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>The computer said: <samp>File not found.</samp></p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;The computer said: &lt;samp&gt;File not found.&lt;/samp&gt;&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-small">
+    <h3><code>&lt;small&gt;</code></h3>
+    <p>Small print, like copyright notes or terms and conditions.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Buy now! <small>Terms and conditions apply.</small></p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Buy now! &lt;small&gt;Terms and conditions apply.&lt;/small&gt;&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-span">
+    <h3><code>&lt;span&gt;</code></h3>
+    <p>A plain inline box with no meaning. Use it to style a few words with CSS.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>My favourite colour is <span style="color:green;">green</span>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;My favourite colour is &lt;span style=&quot;color:green;&quot;&gt;green&lt;/span&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-strong">
+    <h3><code>&lt;strong&gt;</code></h3>
+    <p>Marks very important text. Usually shown in bold.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p><strong>Warning:</strong> the floor is wet.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; the floor is wet.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-sub">
+    <h3><code>&lt;sub&gt;</code></h3>
+    <p>Subscript – small text that sits lower, like the 2 in H₂O.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Water is H<sub>2</sub>O.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Water is H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-sup">
+    <h3><code>&lt;sup&gt;</code></h3>
+    <p>Superscript – small text that sits higher, like the 2 in x².</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>x<sup>2</sup> + y<sup>2</sup></p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;x&lt;sup&gt;2&lt;/sup&gt; + y&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-time">
+    <h3><code>&lt;time&gt;</code></h3>
+    <p>A date or time, written so computers can understand it too.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Class starts at <time datetime="2026-11-20T09:00">9:00 on 20 November</time>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Class starts at &lt;time datetime=&quot;2026-11-20T09:00&quot;&gt;9:00 on 20 November&lt;/time&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-u">
+    <h3><code>&lt;u&gt;</code></h3>
+    <p>Underlines text to show a note, like a spelling mistake mark. Don't use it just for decoration.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>This word is <u>mispeled</u>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;This word is &lt;u&gt;mispeled&lt;/u&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-var">
+    <h3><code>&lt;var&gt;</code></h3>
+    <p>A variable name in maths or programming.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>The area is <var>width</var> × <var>height</var>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;The area is &lt;var&gt;width&lt;/var&gt; × &lt;var&gt;height&lt;/var&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-wbr">
+    <h3><code>&lt;wbr&gt;</code></h3>
+    <p>A hint where a very long word may break onto the next line if there is no room.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p style="width:120px; border:1px dashed #999;">Super<wbr>cali<wbr>fragilistic<wbr>expialidocious</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p style=&quot;width:120px; border:1px dashed #999;&quot;&gt;Super&lt;wbr&gt;cali&lt;wbr&gt;fragilistic&lt;wbr&gt;expialidocious&lt;/p&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Image and multimedia ===== -->
+<section class="cat" id="multimedia">
+  <h2>Image and multimedia</h2>
+  <p>Tags for pictures, sound and video.</p>
+  <div class="el" id="el-area">
+    <h3><code>&lt;area&gt;</code></h3>
+    <p>A clickable area inside an image map. Each area can link somewhere different.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<map name="halves">
+  <area shape="rect" coords="0,0,60,120" href="#forms" alt="Left half – go to Forms">
+  <area shape="rect" coords="60,0,120,120" href="#table-content" alt="Right half – go to Tables">
+</map>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg" alt="Example image map" width="120" height="120" usemap="#halves">
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;map name=&quot;halves&quot;&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;0,0,60,120&quot; href=&quot;#forms&quot; alt=&quot;Left half – go to Forms&quot;&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;60,0,120,120&quot; href=&quot;#table-content&quot; alt=&quot;Right half – go to Tables&quot;&gt;
+&lt;/map&gt;
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg&quot; alt=&quot;Example image map&quot; width=&quot;120&quot; height=&quot;120&quot; usemap=&quot;#halves&quot;&gt;</code></pre>
+    <p class="note">Click the left half of the picture to go to Forms, the right half to go to Tables.</p>
+  </div>
+  <div class="el" id="el-audio">
+    <h3><code>&lt;audio&gt;</code></h3>
+    <p>Plays sound, like music or a voice recording, with play and pause buttons.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<audio controls>
+  <source src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg" type="audio/ogg">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3" type="audio/mpeg">
+  Your browser cannot play this audio.
+</audio>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;audio controls&gt;
+  &lt;source src=&quot;https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+  &lt;source src=&quot;https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  Your browser cannot play this audio.
+&lt;/audio&gt;</code></pre>
+  </div>
+  <div class="el" id="el-img">
+    <h3><code>&lt;img&gt;</code></h3>
+    <p>Shows a picture. The alt text describes it for people who cannot see it.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aurora_borealis_over_Saana_fell.jpg/960px-Aurora_borealis_over_Saana_fell.jpg" alt="Northern lights over Saana fell in Finland" width="240">
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aurora_borealis_over_Saana_fell.jpg/960px-Aurora_borealis_over_Saana_fell.jpg&quot; alt=&quot;Northern lights over Saana fell in Finland&quot; width=&quot;240&quot;&gt;</code></pre>
+  </div>
+  <div class="el" id="el-map">
+    <h3><code>&lt;map&gt;</code></h3>
+    <p>Holds the &lt;area&gt; tags that turn one picture into several clickable links.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<map name="halves2">
+  <area shape="circle" coords="60,60,40" href="#multimedia" alt="Centre circle">
+</map>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg" alt="Image with a clickable circle" width="120" height="120" usemap="#halves2">
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;map name=&quot;halves2&quot;&gt;
+  &lt;area shape=&quot;circle&quot; coords=&quot;60,60,40&quot; href=&quot;#multimedia&quot; alt=&quot;Centre circle&quot;&gt;
+&lt;/map&gt;
+&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg&quot; alt=&quot;Image with a clickable circle&quot; width=&quot;120&quot; height=&quot;120&quot; usemap=&quot;#halves2&quot;&gt;</code></pre>
+  </div>
+  <div class="el" id="el-track">
+    <h3><code>&lt;track&gt;</code></h3>
+    <p>Adds subtitles or captions to a video, from a small text file (.vtt).</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<video controls width="300">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.240p.vp9.webm" type="video/webm">
+  <track src="captions.vtt" kind="captions" srclang="en" label="English" default>
+</video>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;video controls width=&quot;300&quot;&gt;
+  &lt;source src=&quot;https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.240p.vp9.webm&quot; type=&quot;video/webm&quot;&gt;
+  &lt;track src=&quot;captions.vtt&quot; kind=&quot;captions&quot; srclang=&quot;en&quot; label=&quot;English&quot; default&gt;
+&lt;/video&gt;</code></pre>
+    <p class="note">The captions file <code>captions.vtt</code> is saved next to this page. Captions show when the video plays (from a web server).</p>
+  </div>
+  <div class="el" id="el-video">
+    <h3><code>&lt;video&gt;</code></h3>
+    <p>Plays a video with controls for play, pause and volume.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<video controls width="300">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.240p.vp9.webm" type="video/webm">
+  <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.360p.mpeg4.mov" type="video/quicktime">
+  Your browser cannot play this video.
+</video>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;video controls width=&quot;300&quot;&gt;
+  &lt;source src=&quot;https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.240p.vp9.webm&quot; type=&quot;video/webm&quot;&gt;
+  &lt;source src=&quot;https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.360p.mpeg4.mov&quot; type=&quot;video/quicktime&quot;&gt;
+  Your browser cannot play this video.
+&lt;/video&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Embedded content ===== -->
+<section class="cat" id="embedded">
+  <h2>Embedded content</h2>
+  <p>Tags that put other things (pages, files, images) inside your page.</p>
+  <div class="el" id="el-embed">
+    <h3><code>&lt;embed&gt;</code></h3>
+    <p>Puts an outside file, like an SVG picture or a PDF, into the page.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<embed src="https://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg" type="image/svg+xml" width="120" height="120">
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;embed src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg&quot; type=&quot;image/svg+xml&quot; width=&quot;120&quot; height=&quot;120&quot;&gt;</code></pre>
+  </div>
+  <div class="el" id="el-iframe">
+    <h3><code>&lt;iframe&gt;</code></h3>
+    <p>A window that shows another web page inside your page, like a picture-in-picture.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<iframe title="Small inner page" width="300" height="90"
+  srcdoc="<p style='font-family:sans-serif'>Hi! I am a page inside a page.</p>"></iframe>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;iframe title=&quot;Small inner page&quot; width=&quot;300&quot; height=&quot;90&quot;
+  srcdoc=&quot;&lt;p style=&#x27;font-family:sans-serif&#x27;&gt;Hi! I am a page inside a page.&lt;/p&gt;&quot;&gt;&lt;/iframe&gt;</code></pre>
+  </div>
+  <div class="el" id="el-object">
+    <h3><code>&lt;object&gt;</code></h3>
+    <p>An older, general way to put an outside file (image, PDF…) in the page, with fallback text inside.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<object data="https://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg" type="image/svg+xml" width="120" height="120">
+  Picture could not load.
+</object>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;object data=&quot;https://upload.wikimedia.org/wikipedia/commons/8/84/Example.svg&quot; type=&quot;image/svg+xml&quot; width=&quot;120&quot; height=&quot;120&quot;&gt;
+  Picture could not load.
+&lt;/object&gt;</code></pre>
+  </div>
+  <div class="el" id="el-picture">
+    <h3><code>&lt;picture&gt;</code></h3>
+    <p>Lets the browser choose the best picture for the screen, for example a different image on big screens.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<picture>
+  <source media="(min-width: 900px)" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aurora_borealis_over_Saana_fell.jpg/960px-Aurora_borealis_over_Saana_fell.jpg">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg" alt="Big screen: aurora. Small screen: example picture" width="200">
+</picture>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;picture&gt;
+  &lt;source media=&quot;(min-width: 900px)&quot; srcset=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Aurora_borealis_over_Saana_fell.jpg/960px-Aurora_borealis_over_Saana_fell.jpg&quot;&gt;
+  &lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg&quot; alt=&quot;Big screen: aurora. Small screen: example picture&quot; width=&quot;200&quot;&gt;
+&lt;/picture&gt;</code></pre>
+    <p class="note">Make the window narrower than 900px and the picture changes.</p>
+  </div>
+  <div class="el" id="el-source">
+    <h3><code>&lt;source&gt;</code></h3>
+    <p>Gives one option of a file (different format or size) inside &lt;picture&gt;, &lt;audio&gt; or &lt;video&gt;.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<audio controls>
+  <source src="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3" type="audio/mpeg">
+</audio>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;audio controls&gt;
+  &lt;source src=&quot;https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c8/Example.ogg/Example.ogg.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;/audio&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== SVG and MathML ===== -->
+<section class="cat" id="svg-mathml">
+  <h2>SVG and MathML</h2>
+  <p>Tags for drawing shapes and writing maths formulas directly in HTML.</p>
+  <div class="el" id="el-svg">
+    <h3><code>&lt;svg&gt;</code></h3>
+    <p>Draws shapes (circles, lines, text) with code. SVG pictures stay sharp at any size.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<svg width="140" height="80" viewBox="0 0 140 80">
+  <circle cx="40" cy="40" r="30" fill="tomato"/>
+  <rect x="80" y="15" width="50" height="50" fill="steelblue"/>
+</svg>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;svg width=&quot;140&quot; height=&quot;80&quot; viewBox=&quot;0 0 140 80&quot;&gt;
+  &lt;circle cx=&quot;40&quot; cy=&quot;40&quot; r=&quot;30&quot; fill=&quot;tomato&quot;/&gt;
+  &lt;rect x=&quot;80&quot; y=&quot;15&quot; width=&quot;50&quot; height=&quot;50&quot; fill=&quot;steelblue&quot;/&gt;
+&lt;/svg&gt;</code></pre>
+  </div>
+  <div class="el" id="el-math">
+    <h3><code>&lt;math&gt;</code></h3>
+    <p>Writes maths formulas, like fractions and powers, with proper maths layout.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<math display="block">
+  <mfrac><mi>a</mi><mi>b</mi></mfrac>
+  <mo>+</mo>
+  <msup><mi>x</mi><mn>2</mn></msup>
+</math>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;math display=&quot;block&quot;&gt;
+  &lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mfrac&gt;
+  &lt;mo&gt;+&lt;/mo&gt;
+  &lt;msup&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;
+&lt;/math&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Scripting ===== -->
+<section class="cat" id="scripting">
+  <h2>Scripting</h2>
+  <p>Tags for adding JavaScript and drawing with code.</p>
+  <div class="el" id="el-canvas">
+    <h3><code>&lt;canvas&gt;</code></h3>
+    <p>An empty drawing board. JavaScript draws pictures, charts or games on it.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<canvas id="board" width="160" height="80" style="border:1px solid #999;"></canvas>
+<script>
+  const ctx = document.getElementById("board").getContext("2d");
+  ctx.fillStyle = "orange";
+  ctx.fillRect(20, 20, 60, 40);
+  ctx.fillStyle = "purple";
+  ctx.beginPath(); ctx.arc(120, 40, 25, 0, Math.PI * 2); ctx.fill();
+</script>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;canvas id=&quot;board&quot; width=&quot;160&quot; height=&quot;80&quot; style=&quot;border:1px solid #999;&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const ctx = document.getElementById(&quot;board&quot;).getContext(&quot;2d&quot;);
+  ctx.fillStyle = &quot;orange&quot;;
+  ctx.fillRect(20, 20, 60, 40);
+  ctx.fillStyle = &quot;purple&quot;;
+  ctx.beginPath(); ctx.arc(120, 40, 25, 0, Math.PI * 2); ctx.fill();
+&lt;/script&gt;</code></pre>
+  </div>
+  <div class="el" id="el-noscript">
+    <h3><code>&lt;noscript&gt;</code></h3>
+    <p>Text that only shows when JavaScript is turned off in the browser.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<noscript>Please turn on JavaScript to use this site.</noscript>
+<p>(If JavaScript is on, you see nothing extra above.)</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;noscript&gt;Please turn on JavaScript to use this site.&lt;/noscript&gt;
+&lt;p&gt;(If JavaScript is on, you see nothing extra above.)&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-script">
+    <h3><code>&lt;script&gt;</code></h3>
+    <p>Adds JavaScript code that makes the page do things.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Today is: <span id="today"></span></p>
+<script>
+  document.getElementById("today").textContent = new Date().toDateString();
+</script>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Today is: &lt;span id=&quot;today&quot;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;script&gt;
+  document.getElementById(&quot;today&quot;).textContent = new Date().toDateString();
+&lt;/script&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Demarcating edits ===== -->
+<section class="cat" id="edits">
+  <h2>Demarcating edits</h2>
+  <p>Tags that show what was added to or removed from a document.</p>
+  <div class="el" id="el-del">
+    <h3><code>&lt;del&gt;</code></h3>
+    <p>Shows text that was deleted from a document (crossed out).</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Meeting on <del>Monday</del> <ins>Tuesday</ins>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Meeting on &lt;del&gt;Monday&lt;/del&gt; &lt;ins&gt;Tuesday&lt;/ins&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <div class="el" id="el-ins">
+    <h3><code>&lt;ins&gt;</code></h3>
+    <p>Shows text that was added to a document (underlined).</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<p>Bring a pen <ins>and a notebook</ins>.</p>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;p&gt;Bring a pen &lt;ins&gt;and a notebook&lt;/ins&gt;.&lt;/p&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Table content ===== -->
+<section class="cat" id="table-content">
+  <h2>Table content</h2>
+  <p>Tags for building tables with rows and columns. One example table below uses all of them.</p>
+  <div class="el" id="el-caption">
+    <h3><code>&lt;caption&gt;</code></h3>
+    <p>The title of a table, shown above it.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <caption>Bus times</caption>
+  <tr><td>Riga</td><td>08:00</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;caption&gt;Bus times&lt;/caption&gt;
+  &lt;tr&gt;&lt;td&gt;Riga&lt;/td&gt;&lt;td&gt;08:00&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-col">
+    <h3><code>&lt;col&gt;</code></h3>
+    <p>Stands for one column, so you can style a whole column at once (here the Grade column is light blue).</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <col>
+  <col style="background:#ffe9a8;">
+  <tr><td>Name</td><td>Grade</td></tr>
+  <tr><td>Ashkar</td><td>9</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;col&gt;
+  &lt;col style=&quot;background:#ffe9a8;&quot;&gt;
+  &lt;tr&gt;&lt;td&gt;Name&lt;/td&gt;&lt;td&gt;Grade&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Ashkar&lt;/td&gt;&lt;td&gt;9&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-colgroup">
+    <h3><code>&lt;colgroup&gt;</code></h3>
+    <p>A group that holds the &lt;col&gt; tags of a table.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <colgroup>
+    <col span="2" style="background:#dff3e4;">
+  </colgroup>
+  <tr><td>Mon</td><td>Tue</td><td>Wed</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;colgroup&gt;
+    &lt;col span=&quot;2&quot; style=&quot;background:#dff3e4;&quot;&gt;
+  &lt;/colgroup&gt;
+  &lt;tr&gt;&lt;td&gt;Mon&lt;/td&gt;&lt;td&gt;Tue&lt;/td&gt;&lt;td&gt;Wed&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-table">
+    <h3><code>&lt;table&gt;</code></h3>
+    <p>Makes a table – data arranged in rows and columns, like a spreadsheet.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <tr><td>Apples</td><td>€2</td></tr>
+  <tr><td>Milk</td><td>€1</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Apples&lt;/td&gt;&lt;td&gt;€2&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Milk&lt;/td&gt;&lt;td&gt;€1&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-tbody">
+    <h3><code>&lt;tbody&gt;</code></h3>
+    <p>The main body of the table where the normal rows go.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <tbody>
+    <tr><td>Row 1</td></tr>
+    <tr><td>Row 2</td></tr>
+  </tbody>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Row 1&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Row 2&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-td">
+    <h3><code>&lt;td&gt;</code></h3>
+    <p>One normal cell of data in a table.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <tr><td>I am one cell</td><td>I am another cell</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;I am one cell&lt;/td&gt;&lt;td&gt;I am another cell&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-tfoot">
+    <h3><code>&lt;tfoot&gt;</code></h3>
+    <p>The bottom rows of a table, often totals or averages.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <tbody><tr><td>Bread</td><td>€1</td></tr><tr><td>Cheese</td><td>€3</td></tr></tbody>
+  <tfoot><tr><td>Total</td><td>€4</td></tr></tfoot>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Bread&lt;/td&gt;&lt;td&gt;€1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Cheese&lt;/td&gt;&lt;td&gt;€3&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td&gt;€4&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-th">
+    <h3><code>&lt;th&gt;</code></h3>
+    <p>A heading cell. It explains what a column or row is about and is bold by default.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <tr><th>Subject</th><th>Grade</th></tr>
+  <tr><td>Cloud and IoT</td><td>8</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Subject&lt;/th&gt;&lt;th&gt;Grade&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Cloud and IoT&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-thead">
+    <h3><code>&lt;thead&gt;</code></h3>
+    <p>The top rows of a table that hold the column headings.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <thead><tr><th>Day</th><th>Lesson</th></tr></thead>
+  <tr><td>Monday</td><td>WEB technologies</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Day&lt;/th&gt;&lt;th&gt;Lesson&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tr&gt;&lt;td&gt;Monday&lt;/td&gt;&lt;td&gt;WEB technologies&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <div class="el" id="el-tr">
+    <h3><code>&lt;tr&gt;</code></h3>
+    <p>One row in a table.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<table>
+  <tr><td>Row one</td></tr>
+  <tr><td>Row two</td></tr>
+</table>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Row one&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Row two&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Forms ===== -->
+<section class="cat" id="forms">
+  <h2>Forms</h2>
+  <p>Tags for collecting information from people: text boxes, buttons, lists and more.</p>
+  <div class="el" id="el-button">
+    <h3><code>&lt;button&gt;</code></h3>
+    <p>A button people can click to do something, like send a form.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<button type="button" onclick="this.textContent='Clicked!'">Click me</button>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;button type=&quot;button&quot; onclick=&quot;this.textContent=&#x27;Clicked!&#x27;&quot;&gt;Click me&lt;/button&gt;</code></pre>
+  </div>
+  <div class="el" id="el-datalist">
+    <h3><code>&lt;datalist&gt;</code></h3>
+    <p>A list of suggestions that appears while you type in an input box.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<input list="cities" placeholder="Type a city">
+<datalist id="cities">
+  <option value="Riga">
+  <option value="Tallinn">
+  <option value="Vilnius">
+</datalist>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;input list=&quot;cities&quot; placeholder=&quot;Type a city&quot;&gt;
+&lt;datalist id=&quot;cities&quot;&gt;
+  &lt;option value=&quot;Riga&quot;&gt;
+  &lt;option value=&quot;Tallinn&quot;&gt;
+  &lt;option value=&quot;Vilnius&quot;&gt;
+&lt;/datalist&gt;</code></pre>
+  </div>
+  <div class="el" id="el-fieldset">
+    <h3><code>&lt;fieldset&gt;</code></h3>
+    <p>Draws a box around related form fields to group them.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<fieldset>
+  <legend>Your favourite food</legend>
+  <label><input type="radio" name="food"> Pizza</label>
+  <label><input type="radio" name="food"> Sushi</label>
+</fieldset>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Your favourite food&lt;/legend&gt;
+  &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;food&quot;&gt; Pizza&lt;/label&gt;
+  &lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;food&quot;&gt; Sushi&lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+  </div>
+  <div class="el" id="el-form">
+    <h3><code>&lt;form&gt;</code></h3>
+    <p>The container for all the fields people fill in and send, like a sign-up form.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<form onsubmit="event.preventDefault(); alert('Form sent (just a demo)!');">
+  <label for="nm">Name:</label>
+  <input id="nm" name="name" required>
+  <button>Send</button>
+</form>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;form onsubmit=&quot;event.preventDefault(); alert(&#x27;Form sent (just a demo)!&#x27;);&quot;&gt;
+  &lt;label for=&quot;nm&quot;&gt;Name:&lt;/label&gt;
+  &lt;input id=&quot;nm&quot; name=&quot;name&quot; required&gt;
+  &lt;button&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+  <div class="el" id="el-input">
+    <h3><code>&lt;input&gt;</code></h3>
+    <p>A box where people type or choose something. The type changes it: text, email, date, checkbox, colour…</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<input type="text" placeholder="Your name">
+<input type="email" placeholder="you@mail.com">
+<input type="date">
+<input type="checkbox"> I agree
+<input type="color" value="#2a7ae2">
+<input type="range">
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;input type=&quot;text&quot; placeholder=&quot;Your name&quot;&gt;
+&lt;input type=&quot;email&quot; placeholder=&quot;you@mail.com&quot;&gt;
+&lt;input type=&quot;date&quot;&gt;
+&lt;input type=&quot;checkbox&quot;&gt; I agree
+&lt;input type=&quot;color&quot; value=&quot;#2a7ae2&quot;&gt;
+&lt;input type=&quot;range&quot;&gt;</code></pre>
+  </div>
+  <div class="el" id="el-label">
+    <h3><code>&lt;label&gt;</code></h3>
+    <p>The text that tells you what a form field is for. Clicking it also selects the field.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<label for="mail">Email:</label>
+<input id="mail" type="email">
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;label for=&quot;mail&quot;&gt;Email:&lt;/label&gt;
+&lt;input id=&quot;mail&quot; type=&quot;email&quot;&gt;</code></pre>
+  </div>
+  <div class="el" id="el-legend">
+    <h3><code>&lt;legend&gt;</code></h3>
+    <p>The title of a &lt;fieldset&gt; box.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<fieldset>
+  <legend>Login</legend>
+  <input placeholder="Username">
+</fieldset>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;Login&lt;/legend&gt;
+  &lt;input placeholder=&quot;Username&quot;&gt;
+&lt;/fieldset&gt;</code></pre>
+  </div>
+  <div class="el" id="el-meter">
+    <h3><code>&lt;meter&gt;</code></h3>
+    <p>Shows a value inside a known range, like a battery level or a test score.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<label>Battery: <meter value="0.7" min="0" max="1" low="0.3" high="0.8">70%</meter></label>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;label&gt;Battery: &lt;meter value=&quot;0.7&quot; min=&quot;0&quot; max=&quot;1&quot; low=&quot;0.3&quot; high=&quot;0.8&quot;&gt;70%&lt;/meter&gt;&lt;/label&gt;</code></pre>
+  </div>
+  <div class="el" id="el-optgroup">
+    <h3><code>&lt;optgroup&gt;</code></h3>
+    <p>Groups options inside a dropdown under a small heading.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<select>
+  <optgroup label="Baltic">
+    <option>Latvia</option>
+    <option>Estonia</option>
+  </optgroup>
+  <optgroup label="Asia">
+    <option>India</option>
+  </optgroup>
+</select>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;select&gt;
+  &lt;optgroup label=&quot;Baltic&quot;&gt;
+    &lt;option&gt;Latvia&lt;/option&gt;
+    &lt;option&gt;Estonia&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label=&quot;Asia&quot;&gt;
+    &lt;option&gt;India&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+  </div>
+  <div class="el" id="el-option">
+    <h3><code>&lt;option&gt;</code></h3>
+    <p>One choice inside a dropdown (&lt;select&gt;) or a &lt;datalist&gt;.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<select>
+  <option>Small</option>
+  <option selected>Medium</option>
+  <option>Large</option>
+</select>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;select&gt;
+  &lt;option&gt;Small&lt;/option&gt;
+  &lt;option selected&gt;Medium&lt;/option&gt;
+  &lt;option&gt;Large&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+  </div>
+  <div class="el" id="el-output">
+    <h3><code>&lt;output&gt;</code></h3>
+    <p>Shows the result of a calculation, for example while you change numbers.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<form oninput="sum.value = Number(a.value) + Number(b.value)">
+  <input name="a" type="number" value="2"> +
+  <input name="b" type="number" value="3"> =
+  <output name="sum">5</output>
+</form>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;form oninput=&quot;sum.value = Number(a.value) + Number(b.value)&quot;&gt;
+  &lt;input name=&quot;a&quot; type=&quot;number&quot; value=&quot;2&quot;&gt; +
+  &lt;input name=&quot;b&quot; type=&quot;number&quot; value=&quot;3&quot;&gt; =
+  &lt;output name=&quot;sum&quot;&gt;5&lt;/output&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+  <div class="el" id="el-progress">
+    <h3><code>&lt;progress&gt;</code></h3>
+    <p>A progress bar, like a download that is 60% done.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<label>Download: <progress value="60" max="100">60%</progress></label>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;label&gt;Download: &lt;progress value=&quot;60&quot; max=&quot;100&quot;&gt;60%&lt;/progress&gt;&lt;/label&gt;</code></pre>
+  </div>
+  <div class="el" id="el-select">
+    <h3><code>&lt;select&gt;</code></h3>
+    <p>A dropdown list where you pick one (or more) options.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<label>Year:
+  <select>
+    <option>1st year</option>
+    <option>2nd year</option>
+    <option>3rd year</option>
+  </select>
+</label>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;label&gt;Year:
+  &lt;select&gt;
+    &lt;option&gt;1st year&lt;/option&gt;
+    &lt;option&gt;2nd year&lt;/option&gt;
+    &lt;option&gt;3rd year&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/label&gt;</code></pre>
+  </div>
+  <div class="el" id="el-selectedcontent">
+    <h3><code>&lt;selectedcontent&gt;</code></h3>
+    <p>A brand-new tag for custom-styled dropdowns: it copies the chosen option into the dropdown's button. Only the newest browsers support it; older ones just show a normal dropdown.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<select>
+  <button><selectedcontent></selectedcontent></button>
+  <option>🍎 Apple</option>
+  <option>🍌 Banana</option>
+</select>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;select&gt;
+  &lt;button&gt;&lt;selectedcontent&gt;&lt;/selectedcontent&gt;&lt;/button&gt;
+  &lt;option&gt;🍎 Apple&lt;/option&gt;
+  &lt;option&gt;🍌 Banana&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+    <p class="note">Experimental – if your browser does not support it yet, you will see a normal dropdown.</p>
+  </div>
+  <div class="el" id="el-textarea">
+    <h3><code>&lt;textarea&gt;</code></h3>
+    <p>A big text box for writing several lines, like a message or comment.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<textarea rows="3" cols="30" placeholder="Write your message…"></textarea>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;textarea rows=&quot;3&quot; cols=&quot;30&quot; placeholder=&quot;Write your message…&quot;&gt;&lt;/textarea&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Interactive elements ===== -->
+<section class="cat" id="interactive">
+  <h2>Interactive elements</h2>
+  <p>Tags that create things people can open, close or click without extra JavaScript.</p>
+  <div class="el" id="el-details">
+    <h3><code>&lt;details&gt;</code></h3>
+    <p>A box that opens and closes when you click its title – great for FAQs.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<details>
+  <summary>What is HTML?</summary>
+  <p>The language used to build web pages.</p>
+</details>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;details&gt;
+  &lt;summary&gt;What is HTML?&lt;/summary&gt;
+  &lt;p&gt;The language used to build web pages.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+  </div>
+  <div class="el" id="el-dialog">
+    <h3><code>&lt;dialog&gt;</code></h3>
+    <p>A pop-up window (dialog box) on top of the page.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<dialog id="hello">
+  <p>Hello! I am a dialog.</p>
+  <button type="button" onclick="this.closest('dialog').close()">Close</button>
+</dialog>
+<button type="button" onclick="document.getElementById('hello').showModal()">Open dialog</button>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;dialog id=&quot;hello&quot;&gt;
+  &lt;p&gt;Hello! I am a dialog.&lt;/p&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;this.closest(&#x27;dialog&#x27;).close()&quot;&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&#x27;hello&#x27;).showModal()&quot;&gt;Open dialog&lt;/button&gt;</code></pre>
+  </div>
+  <div class="el" id="el-geolocation">
+    <h3><code>&lt;geolocation&gt;</code></h3>
+    <p>A brand-new button that asks the visitor for permission to share their location. Only very new browsers support it, so it shows normal text otherwise.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<geolocation>
+  Your browser does not support the &lt;geolocation&gt; button yet.
+</geolocation>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;geolocation&gt;
+  Your browser does not support the &amp;lt;geolocation&amp;gt; button yet.
+&lt;/geolocation&gt;</code></pre>
+    <p class="note">Experimental – most browsers show only the fallback text inside it.</p>
+  </div>
+  <div class="el" id="el-summary">
+    <h3><code>&lt;summary&gt;</code></h3>
+    <p>The clickable title of a &lt;details&gt; box.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<details>
+  <summary>Click to see my hobbies</summary>
+  <p>Football, travelling and photography.</p>
+</details>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;details&gt;
+  &lt;summary&gt;Click to see my hobbies&lt;/summary&gt;
+  &lt;p&gt;Football, travelling and photography.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Web Components ===== -->
+<section class="cat" id="web-components">
+  <h2>Web Components</h2>
+  <p>Tags for making your own reusable HTML pieces.</p>
+  <div class="el" id="el-slot">
+    <h3><code>&lt;slot&gt;</code></h3>
+    <p>An empty space inside a custom component where you can plug in your own content.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<name-card><span slot="name">Ashkar Siyad</span></name-card>
+<template id="name-card-tpl">
+  <div style="border:2px solid teal; padding:6px; border-radius:6px;">
+    Student: <strong><slot name="name">Unknown</slot></strong>
+  </div>
+</template>
+<script>
+  customElements.define("name-card", class extends HTMLElement {
+    constructor() {
+      super();
+      const tpl = document.getElementById("name-card-tpl");
+      this.attachShadow({ mode: "open" }).appendChild(tpl.content.cloneNode(true));
+    }
+  });
+</script>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;name-card&gt;&lt;span slot=&quot;name&quot;&gt;Ashkar Siyad&lt;/span&gt;&lt;/name-card&gt;
+&lt;template id=&quot;name-card-tpl&quot;&gt;
+  &lt;div style=&quot;border:2px solid teal; padding:6px; border-radius:6px;&quot;&gt;
+    Student: &lt;strong&gt;&lt;slot name=&quot;name&quot;&gt;Unknown&lt;/slot&gt;&lt;/strong&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  customElements.define(&quot;name-card&quot;, class extends HTMLElement {
+    constructor() {
+      super();
+      const tpl = document.getElementById(&quot;name-card-tpl&quot;);
+      this.attachShadow({ mode: &quot;open&quot; }).appendChild(tpl.content.cloneNode(true));
+    }
+  });
+&lt;/script&gt;</code></pre>
+  </div>
+  <div class="el" id="el-template">
+    <h3><code>&lt;template&gt;</code></h3>
+    <p>Hidden HTML that is not shown until JavaScript copies it into the page. Like a stamp you can use many times.</p>
+    <div class="demo-label">Live example</div>
+    <div class="demo">
+<template id="row-tpl"><li>New item ✔</li></template>
+<ul id="list"></ul>
+<button type="button" onclick="document.getElementById('list').appendChild(document.getElementById('row-tpl').content.cloneNode(true))">Add item</button>
+    </div>
+    <div class="code-label">Code</div>
+    <pre><code>&lt;template id=&quot;row-tpl&quot;&gt;&lt;li&gt;New item ✔&lt;/li&gt;&lt;/template&gt;
+&lt;ul id=&quot;list&quot;&gt;&lt;/ul&gt;
+&lt;button type=&quot;button&quot; onclick=&quot;document.getElementById(&#x27;list&#x27;).appendChild(document.getElementById(&#x27;row-tpl&#x27;).content.cloneNode(true))&quot;&gt;Add item&lt;/button&gt;</code></pre>
+  </div>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<!-- ===== Obsolete and deprecated ===== -->
+<section class="cat" id="obsolete">
+  <h2>Obsolete and deprecated</h2>
+  <p>These tags are old. Browsers may still understand some of them, but you should not use them in new pages. They are listed here only so you recognise them.</p>
+  <table class="obsolete">
+    <thead><tr><th>Tag</th><th>What it did</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr id="el-acronym"><td><code>&lt;acronym&gt;</code></td><td>Old way to mark a short form of a word.</td><td><span class="old">Old – don't use it</span>, use &lt;abbr&gt; instead.</td></tr>
+      <tr id="el-big"><td><code>&lt;big&gt;</code></td><td>Made text one size bigger.</td><td><span class="old">Old – don't use it</span>, use CSS <code>font-size</code> instead.</td></tr>
+      <tr id="el-center"><td><code>&lt;center&gt;</code></td><td>Put content in the middle of the page.</td><td><span class="old">Old – don't use it</span>, use CSS <code>text-align: center</code> or flexbox instead.</td></tr>
+      <tr id="el-content"><td><code>&lt;content&gt;</code></td><td>An early Web Components placeholder for content.</td><td><span class="old">Old – don't use it</span>, use &lt;slot&gt; instead.</td></tr>
+      <tr id="el-dir"><td><code>&lt;dir&gt;</code></td><td>An old list of folder or file names.</td><td><span class="old">Old – don't use it</span>, use &lt;ul&gt; instead.</td></tr>
+      <tr id="el-fencedframe"><td><code>&lt;fencedframe&gt;</code></td><td>An experimental privacy-focused frame for ads; MDN lists it here as not for normal use.</td><td><span class="old">Old – don't use it</span>, use &lt;iframe&gt; instead.</td></tr>
+      <tr id="el-font"><td><code>&lt;font&gt;</code></td><td>Changed the font, size and colour of text.</td><td><span class="old">Old – don't use it</span>, use CSS (<code>font-family</code>, <code>color</code>) instead.</td></tr>
+      <tr id="el-frame"><td><code>&lt;frame&gt;</code></td><td>One window inside a &lt;frameset&gt;.</td><td><span class="old">Old – don't use it</span>, use &lt;iframe&gt; or normal page layout instead.</td></tr>
+      <tr id="el-frameset"><td><code>&lt;frameset&gt;</code></td><td>Split the whole browser window into several frames.</td><td><span class="old">Old – don't use it</span>, use CSS Grid or Flexbox layout instead.</td></tr>
+      <tr id="el-image"><td><code>&lt;image&gt;</code></td><td>A wrong, old spelling of the image tag.</td><td><span class="old">Old – don't use it</span>, use &lt;img&gt; instead.</td></tr>
+      <tr id="el-marquee"><td><code>&lt;marquee&gt;</code></td><td>Made text scroll across the screen.</td><td><span class="old">Old – don't use it</span>, use CSS animations instead.</td></tr>
+      <tr id="el-menuitem"><td><code>&lt;menuitem&gt;</code></td><td>One command inside an old pop-up menu.</td><td><span class="old">Old – don't use it</span>, use &lt;button&gt; inside &lt;menu&gt; instead.</td></tr>
+      <tr id="el-nobr"><td><code>&lt;nobr&gt;</code></td><td>Stopped text from wrapping to a new line.</td><td><span class="old">Old – don't use it</span>, use CSS <code>white-space: nowrap</code> instead.</td></tr>
+      <tr id="el-noembed"><td><code>&lt;noembed&gt;</code></td><td>Fallback content for &lt;embed&gt;.</td><td><span class="old">Old – don't use it</span>, use &lt;object&gt; with fallback inside instead.</td></tr>
+      <tr id="el-noframes"><td><code>&lt;noframes&gt;</code></td><td>Text for browsers that could not show frames.</td><td><span class="old">Old – don't use it</span>, use no replacement needed – don't use frames instead.</td></tr>
+      <tr id="el-param"><td><code>&lt;param&gt;</code></td><td>Gave settings to an &lt;object&gt; plug-in.</td><td><span class="old">Old – don't use it</span>, use attributes on &lt;object&gt; instead.</td></tr>
+      <tr id="el-plaintext"><td><code>&lt;plaintext&gt;</code></td><td>Showed everything after it as plain text.</td><td><span class="old">Old – don't use it</span>, use &lt;pre&gt; or &lt;code&gt; instead.</td></tr>
+      <tr id="el-rb"><td><code>&lt;rb&gt;</code></td><td>Marked the base text in a ruby annotation.</td><td><span class="old">Old – don't use it</span>, use &lt;ruby&gt; with &lt;rt&gt; instead.</td></tr>
+      <tr id="el-rtc"><td><code>&lt;rtc&gt;</code></td><td>Grouped ruby text for semantic annotation.</td><td><span class="old">Old – don't use it</span>, use &lt;rt&gt; instead.</td></tr>
+      <tr id="el-shadow"><td><code>&lt;shadow&gt;</code></td><td>An early Web Components shadow-DOM placeholder.</td><td><span class="old">Old – don't use it</span>, use <code>attachShadow()</code> in JavaScript instead.</td></tr>
+      <tr id="el-strike"><td><code>&lt;strike&gt;</code></td><td>Crossed text out.</td><td><span class="old">Old – don't use it</span>, use &lt;s&gt; or &lt;del&gt; instead.</td></tr>
+      <tr id="el-tt"><td><code>&lt;tt&gt;</code></td><td>Showed text in a typewriter font.</td><td><span class="old">Old – don't use it</span>, use &lt;code&gt;, &lt;kbd&gt; or &lt;samp&gt; instead.</td></tr>
+      <tr id="el-xmp"><td><code>&lt;xmp&gt;</code></td><td>Showed text exactly as written (like pre).</td><td><span class="old">Old – don't use it</span>, use &lt;pre&gt; with &lt;code&gt; instead.</td></tr>
+    </tbody>
+  </table>
+  <p class="back"><a href="#toc">↑ Back to the table of contents</a></p>
+</section>
+
+<footer>
+  <p><small>Made by Ashkar Siyad for the Web Technologies course. Source list of elements: MDN HTML elements reference. Pictures, sound and video: Wikimedia Commons (free licences).</small></p>
+</footer>
+
+</body>
+</html>

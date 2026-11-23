@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>08 Advanced Selectors – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Advanced selectors practice</h1>
+
+  <section class="family">
+    <h2>Combinators</h2>
+    <p>I am a direct child p (bold + grey).</p>
+    <h3>A heading</h3>
+    <p>I come right after the h3 (yellow = adjacent sibling, blue line = general sibling).</p>
+    <p>I am also after the h3 (blue line only).</p>
+    <div><p>I am inside a div, so not a direct child – only grey.</p></div>
+  </section>
+
+  <section>
+    <h2>Pseudo-classes</h2>
+    <ul class="list">
+      <li>First child (blue)</li><li>Two</li><li>Three</li><li>Four</li><li>Last child (red) – hover any item!</li>
+    </ul>
+    <p><input id="task" type="checkbox"><label for="task">Tick me – I get crossed out (:checked + label)</label></p>
+    <p><input placeholder="Click me – :focus outline"></p>
+    <p></p>
+    <p>↑ that striped bar is an empty &lt;p&gt; styled with :empty</p>
+    <button class="btn">Normal (:not(.primary))</button> <button class="btn primary">Primary</button>
+  </section>
+
+  <section>
+    <h2>Pseudo-elements</h2>
+    <p class="story">Once upon a time, a student in Riga learned CSS. The first line of this paragraph is in small caps and the first letter is big. Try selecting some text – the ::selection colour is purple!</p>
+    <ul class="tips"><li>Custom list markers with ::marker</li><li>Second tip</li></ul>
+    <p class="quote">Quote marks added with ::before and ::after</p>
+  </section>
+
+  <section>
+    <h2>Attribute selectors</h2>
+    <p><a href="https://developer.mozilla.org">An https link (arrow added)</a></p>
+    <p><a href="notes.pdf">A PDF link (red + "(PDF)")</a></p>
+    <p><input type="email" placeholder="email input – green border"></p>
+    <p><span class="text-warning">class contains "warn"</span></p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,9 @@
+body { font-family: system-ui, sans-serif; margin: 1rem; line-height: 1.5; }
+h1 { font-size: clamp(1.6rem, 5vw, 3.5rem); color: #1f3a5f; }
+.calc { width: calc(100% - 4rem); background: #e6f0fb; padding: 1rem; margin: 1rem 0; }
+.min { width: min(90%, 500px); background: #fff1d6; padding: 1rem; margin: 1rem 0; }
+.max { font-size: max(1rem, 2vw); background: #f3e8ff; padding: 1rem; margin: 1rem 0; }
+.clamp { font-size: clamp(1rem, 3vw, 2rem); background: #e6f4ea; padding: 1rem; margin: 1rem 0; }
+.sidebar-layout { display: flex; gap: 1rem; }
+.sidebar-layout aside { width: 180px; background: #1f3a5f; color: white; padding: 1rem; }
+.sidebar-layout main { width: calc(100% - 180px - 1rem); background: #f1f5fa; padding: 1rem; }

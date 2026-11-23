@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>17 Creating a Grid – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Creating a grid</h1>
+  <p>Blue items fill the <strong>explicit</strong> grid (3 columns × 2 rows). Yellow items didn't fit, so the browser made <strong>implicit</strong> rows for them (40px high because of <code>grid-auto-rows</code>).</p>
+  <div class="container">
+    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+    <div>7</div><div>8</div><div>9</div>
+  </div>
+  <h2>grid-auto-flow: column</h2>
+  <p>Here new items create new <em>columns</em> instead of rows.</p>
+  <div class="auto-flow"><div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div></div>
+</body>
+</html>

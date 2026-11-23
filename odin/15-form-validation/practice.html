@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>15 Form Validation – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form action="#" method="post" onsubmit="event.preventDefault(); alert('All fields are valid! (demo – nothing sent)');">
+    <h1>Join the coding club</h1>
+
+    <label for="username">Username</label>
+    <input id="username" name="username" required minlength="3" maxlength="15" pattern="[A-Za-z0-9_]+" title="3–15 letters, numbers or _">
+    <p class="hint">3–15 letters, numbers or underscore</p>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+    <p class="hint">Must look like name@example.com</p>
+
+    <label for="age">Age</label>
+    <input id="age" name="age" type="number" min="16" max="99" required>
+    <p class="hint">Between 16 and 99</p>
+
+    <label for="website">Website (optional)</label>
+    <input id="website" name="website" type="url" placeholder="https://…">
+    <p class="hint">Must start with http:// or https://</p>
+
+    <label for="postcode">Latvian postcode</label>
+    <input id="postcode" name="postcode" required pattern="LV-[0-9]{4}" placeholder="LV-1050" title="Format: LV- and 4 numbers">
+    <p class="hint">Format LV-1234</p>
+
+    <label for="pw">Password</label>
+    <input id="pw" name="pw" type="password" required minlength="8" pattern="(?=.*[0-9])(?=.*[A-Z]).{8,}" title="At least 8 characters, one capital letter and one number">
+    <p class="hint">At least 8 characters, with a capital letter and a number</p>
+
+    <button type="submit">Join</button>
+  </form>
+</body>
+</html>

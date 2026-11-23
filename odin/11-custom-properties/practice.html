@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>11 Custom Properties – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Custom properties (CSS variables)</h1>
+  <button type="button" onclick="document.documentElement.classList.toggle('dark'); document.documentElement.classList.toggle('light')">Switch light / dark theme</button>
+  <div class="card">This card uses <code>var(--card)</code>, <code>var(--radius)</code> and <code>var(--accent)</code>.</div>
+  <div class="card special">This card changes <code>--accent</code> only inside itself (scope) – its line is green.</div>
+  <p class="fallback">This text uses <code>var(--does-not-exist, tomato)</code> – the fallback colour.</p>
+</body>
+</html>

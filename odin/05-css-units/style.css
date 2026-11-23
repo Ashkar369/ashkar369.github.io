@@ -1,0 +1,12 @@
+body { font-family: system-ui, sans-serif; max-width: 900px; margin: 1rem auto; padding: 0 1rem; }
+.box { border: 2px solid #2a7ae2; padding: .5rem; margin: .5rem 0; }
+
+/* em snowballs: each nested level is 1.2 x its parent */
+.em-demo .level { font-size: 1.2em; }
+/* rem stays the same at every level */
+.rem-demo .level { font-size: 1.2rem; }
+
+.percent { width: 50%; background: #e6f4ea; }
+.vw { width: 30vw; background: #fff1d6; }
+.vh { height: 20vh; background: #f3e8ff; }
+.px-border { border: 4px dashed #c0392b; }

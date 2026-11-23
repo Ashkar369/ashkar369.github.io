@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>04 Default Styles – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Default styles vs my reset</h1>
+  <p>Both boxes below show the same HTML. The left one only has the browser's default styles. The right one uses my small CSS reset.</p>
+  <div class="columns">
+    <div>
+      <h2>Browser defaults</h2>
+      <iframe title="Defaults" srcdoc="<h1>Heading</h1><p>Paragraph with a <a href='#'>link</a>.</p><ul><li>List item</li><li>List item</li></ul><button>Button</button> <input value='Input'>"></iframe>
+    </div>
+    <div>
+      <h2>With my reset</h2>
+      <iframe title="Reset" srcdoc="<style>*,*::before,*::after{box-sizing:border-box}*{margin:0}body{line-height:1.5;font-family:system-ui,sans-serif;padding:8px}ul{padding-left:1.2rem}img,svg{display:block;max-width:100%}input,button{font:inherit}</style><h1>Heading</h1><p>Paragraph with a <a href='#'>link</a>.</p><ul><li>List item</li><li>List item</li></ul><button>Button</button> <input value='Input'>"></iframe>
+    </div>
+  </div>
+</body>
+</html>

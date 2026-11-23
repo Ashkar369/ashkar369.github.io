@@ -1,0 +1,19 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; background: #f1f5fa; color: #1d2330; }
+/* GRID for the whole page */
+.page { display: grid; grid-template-columns: 200px 1fr; grid-template-rows: auto 1fr; min-height: 100vh; }
+/* FLEXBOX for the navbar */
+.topbar { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .8rem 1.2rem; background: #1f3a5f; color: white; }
+.topbar nav { display: flex; gap: 1rem; }
+.topbar a { color: white; text-decoration: none; }
+.side { background: #2a7ae2; color: white; padding: 1rem; }
+.side ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+main { padding: 1.2rem; }
+/* GRID for the cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.card { background: white; border-radius: 10px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,.08); display: flex; flex-direction: column; }
+.card p { flex: 1; }
+/* FLEXBOX inside each card */
+.card-actions { display: flex; justify-content: flex-end; gap: .5rem; }
+.card-actions button { border: 0; background: #e3ebf6; border-radius: 6px; padding: .3rem .6rem; cursor: pointer; font: inherit; }
+@media (max-width: 600px) { .page { grid-template-columns: 1fr; } .side ul { flex-direction: row; flex-wrap: wrap; } }

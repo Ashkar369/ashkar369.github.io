@@ -1,0 +1,11 @@
+body { font-family: system-ui, sans-serif; max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+.demo { display: grid; gap: 10px; background: #f1f5fa; padding: 10px; border-radius: 10px; margin-bottom: 1.5rem; }
+.demo > div { background: #2a7ae2; color: white; padding: 1rem; border-radius: 6px; text-align: center; font-weight: bold; }
+.repeat-fr { grid-template-columns: repeat(2, 1fr 2fr); }
+.minmax { grid-template-columns: minmax(120px, 200px) 1fr minmax(100px, 1fr); }
+.auto-fill { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.auto-fit  { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.auto-fill > div { background: #6a11cb; }
+.auto-fit > div { background: seagreen; }
+.cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.cards > div { background: white; color: #1d2330; border: 1px solid #d0d7e2; text-align: left; font-weight: normal; }

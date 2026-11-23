@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>03 Tables – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tables practice</h1>
+
+  <!-- Table 1: grouping, scope, colgroup, tfoot -->
+  <table>
+    <caption>My 3rd-year grades (out of 10)</caption>
+    <colgroup>
+      <col>
+      <col class="highlight-col">
+      <col>
+    </colgroup>
+    <thead>
+      <tr><th scope="col">Subject</th><th scope="col">Grade</th><th scope="col">Credits</th></tr>
+    </thead>
+    <tbody>
+      <tr><th scope="row">Generative AI Applications</th><td>9</td><td>6</td></tr>
+      <tr><th scope="row">WEB technologies</th><td>8</td><td>6</td></tr>
+      <tr><th scope="row">Course Paper 3</th><td>8</td><td>3</td></tr>
+    </tbody>
+    <tfoot>
+      <tr><th scope="row">Average / Total</th><td>8.3</td><td>15</td></tr>
+    </tfoot>
+  </table>
+
+  <!-- Table 2: rowspan and colspan (inspired by the MDN planets assessment, with my own data) -->
+  <table>
+    <caption>Baltic capitals – some facts</caption>
+    <thead>
+      <tr>
+        <th scope="col" colspan="2">Place</th>
+        <th scope="col">Population (approx.)</th>
+        <th scope="col">River</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><th scope="rowgroup" rowspan="3">Baltic states</th><th scope="row">Riga (Latvia)</th><td>605,000</td><td>Daugava</td></tr>
+      <tr><th scope="row">Vilnius (Lithuania)</th><td>590,000</td><td>Neris</td></tr>
+      <tr><th scope="row">Tallinn (Estonia)</th><td>460,000</td><td>– (on the sea)</td></tr>
+      <tr><th scope="rowgroup">Nordic</th><th scope="row">Helsinki (Finland)</th><td>675,000</td><td>Vantaa</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

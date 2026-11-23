@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>12 Browser Compatibility – practice</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 700px; margin: 2rem auto; padding: 0 1rem; }
+    li { padding: .3rem .6rem; margin: .3rem 0; border-radius: 6px; background: #ffe0e0; }
+    li::after { content: " ✖ not supported"; color: #a32020; }
+    /* Each @supports block turns the line green if the browser supports that feature */
+    @supports (display: grid)            { #grid   { background: #dff3e4; } #grid::after   { content: " ✔ supported"; color: green; } }
+    @supports (--x: 1)                   { #vars   { background: #dff3e4; } #vars::after   { content: " ✔ supported"; color: green; } }
+    @supports (width: clamp(1px, 2px, 3px)) { #clamp { background: #dff3e4; } #clamp::after { content: " ✔ supported"; color: green; } }
+    @supports selector(:has(a))          { #has    { background: #dff3e4; } #has::after    { content: " ✔ supported"; color: green; } }
+    @supports selector(:user-invalid)    { #ui     { background: #dff3e4; } #ui::after     { content: " ✔ supported"; color: green; } }
+    @supports (color: color-mix(in srgb, red, blue)) { #mix { background: #dff3e4; } #mix::after { content: " ✔ supported"; color: green; } }
+  </style>
+</head>
+<body>
+  <h1>Does my browser support it?</h1>
+  <p>This list is coloured with <code>@supports</code> – open this page in different browsers to compare.</p>
+  <ul>
+    <li id="grid">CSS Grid</li>
+    <li id="vars">Custom properties (variables)</li>
+    <li id="clamp">clamp()</li>
+    <li id="has">:has() selector</li>
+    <li id="ui">:user-invalid</li>
+    <li id="mix">color-mix()</li>
+  </ul>
+  <p>Check details on <a href="https://caniuse.com" target="_blank">caniuse.com</a>.</p>
+</body>
+</html>

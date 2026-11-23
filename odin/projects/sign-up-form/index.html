@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up – ODIN</title>
+  <!-- Fonts: Roboto for the text, Cinzel for the "ODIN" logo (both free, from Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- Left side: background photo with the logo -->
+    <aside class="sidebar">
+      <div class="logo-band">
+        <img class="logo-img" src="images/odin-logo.png" alt="">
+        <h1 class="logo-text">ODIN</h1>
+      </div>
+      <p class="credit">
+        Photo by <a href="https://commons.wikimedia.org/wiki/File:Polystichum_munitum_iNat-110931146.1.jpg" target="_blank" rel="noopener">Timothy McNitt</a>
+        on <a href="https://commons.wikimedia.org" target="_blank" rel="noopener">Wikimedia Commons</a> (CC BY 4.0)
+      </p>
+    </aside>
+
+    <!-- Right side: text, form and button -->
+    <main class="content">
+      <section class="intro">
+        <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
+        <p>You <em>know</em> you want to.</p>
+      </section>
+
+      <section class="form-section">
+        <form id="signup" action="#" method="post">
+          <h2>Let's do this!</h2>
+          <div class="fields">
+            <div class="field">
+              <label for="first-name">First name</label>
+              <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="last-name">Last name</label>
+              <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" pattern="\+?[0-9 ]{7,15}" title="7–15 digits, spaces and an optional + at the start">
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" title="At least 8 characters">
+              <p class="hint">At least 8 characters</p>
+            </div>
+            <div class="field">
+              <label for="confirm-password">Confirm password</label>
+              <input id="confirm-password" name="confirm_password" type="password" autocomplete="new-password" required minlength="8" title="At least 8 characters">
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="actions">
+        <!-- form="signup" connects this button to the form above even though it sits outside it -->
+        <button type="submit" form="signup">Create Account</button>
+        <p>Already have an account? <a href="#">Log in</a></p>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>

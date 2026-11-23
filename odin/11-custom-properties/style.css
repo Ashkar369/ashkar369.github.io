@@ -1,0 +1,23 @@
+:root {
+  --bg: #ffffff;
+  --text: #1d2330;
+  --card: #f1f5fa;
+  --accent: #2a7ae2;
+  --radius: 12px;
+}
+.dark {
+  --bg: #121826;
+  --text: #e8edf5;
+  --card: #1f2a3d;
+  --accent: #f2b705;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) { --bg: #121826; --text: #e8edf5; --card: #1f2a3d; --accent: #f2b705; }
+}
+body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem 1rem; transition: background .3s, color .3s; }
+.card { background: var(--card); border-radius: var(--radius); padding: 1rem; margin: 1rem 0; border-left: 6px solid var(--accent); }
+button { background: var(--accent); color: var(--bg); border: 0; border-radius: var(--radius); padding: .6rem 1rem; font: inherit; cursor: pointer; }
+/* Scope: this card overrides --accent only for itself and its children */
+.card.special { --accent: seagreen; }
+/* Fallback: --does-not-exist is not defined, so tomato is used */
+.fallback { color: var(--does-not-exist, tomato); }

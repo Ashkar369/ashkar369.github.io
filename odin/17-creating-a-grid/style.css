@@ -1,0 +1,13 @@
+body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+.container {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;   /* explicit columns */
+  grid-template-rows: 70px 70px;            /* explicit rows */
+  grid-auto-rows: 40px;                      /* implicit rows (items 7+) */
+  gap: 12px 20px;                            /* row gap, column gap */
+  background: #f1f5fa; padding: 12px; border-radius: 10px;
+}
+.container > div { background: #2a7ae2; color: white; display: grid; place-items: center; border-radius: 6px; font-weight: bold; }
+.container > div:nth-child(n+7) { background: #f2b705; color: #1d2330; }
+.auto-flow { display: grid; grid-template-rows: 50px 50px; grid-auto-flow: column; grid-auto-columns: 90px; gap: 8px; margin-top: 1rem; }
+.auto-flow div { background: #6a11cb; color: white; display: grid; place-items: center; border-radius: 6px; }

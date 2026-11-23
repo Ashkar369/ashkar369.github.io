@@ -1,0 +1,144 @@
+/* ===== Small reset ===== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+img { display: block; max-width: 100%; }
+input, button { font: inherit; }
+
+/* ===== Colours and sizes in one place (custom properties) ===== */
+:root {
+  --green: #596d48;
+  --green-dark: #475a37;
+  --page-bg: #f9fafb;
+  --text: #111827;
+  --muted: #374151;
+  --input-border: #e5e7eb;
+  --focus: #2563eb;
+  --error: #b91c1c;
+  --pad: clamp(1.5rem, 4vw, 3rem);
+}
+
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  color: var(--text);
+  background: var(--page-bg);
+}
+
+/* ===== Page layout: two columns ===== */
+.page {
+  display: grid;
+  grid-template-columns: minmax(280px, 37fr) 63fr;
+  min-height: 100vh;
+}
+
+/* ===== Left side ===== */
+.sidebar {
+  background: url("images/fern.jpg") center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 22vh;
+}
+.logo-band {
+  background: rgba(0, 0, 0, 0.5);          /* dark but see-through, so the text is readable */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.5rem 1rem;
+}
+.logo-img { width: clamp(70px, 8vw, 100px); }
+.logo-text {
+  font-family: "Cinzel", serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  color: white;
+  letter-spacing: 0.05em;
+}
+.credit {
+  color: white;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+.credit a { color: white; }
+
+/* ===== Right side ===== */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.intro {
+  padding: 0 var(--pad) 2rem;
+  max-width: 48rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+.intro p + p { margin-top: 1.4em; }
+
+.form-section {
+  background: white;
+  padding: 2rem var(--pad);
+  box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.12);
+}
+.form-section h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 16rem));
+  column-gap: clamp(1.5rem, 5vw, 4.5rem);
+  row-gap: 1.2rem;
+}
+.field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.3rem;
+}
+.field input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+}
+/* Selected input: blue border + soft shadow */
+.field input:focus {
+  outline: none;
+  border-color: var(--focus);
+  box-shadow: 0 1px 6px rgba(37, 99, 235, 0.35);
+}
+/* Invalid input (only after the user has typed): red border */
+.field input:user-invalid {
+  border-color: var(--error);
+}
+.hint { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+.actions { padding: 2rem var(--pad); }
+.actions button {
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 3.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.actions button:hover { background: var(--green-dark); }
+.actions p { margin-top: 1.8rem; }
+.actions a { color: var(--green); font-weight: 700; text-decoration: none; }
+.actions a:hover { text-decoration: underline; }
+
+/* ===== Extra (not required by Odin): small screens stack the columns ===== */
+@media (max-width: 760px) {
+  .page { grid-template-columns: 1fr; }
+  .sidebar { min-height: 45vh; padding-top: 10vh; }
+  .content { padding-top: 2rem; }
+  .fields { grid-template-columns: 1fr; }
+}

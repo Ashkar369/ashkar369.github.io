@@ -1,0 +1,13 @@
+body { font-family: system-ui, sans-serif; max-width: 760px; margin: 0 auto; padding: 0 1rem 60vh; line-height: 1.5; }
+.box { background: #e6f0fb; border: 2px solid #2a7ae2; padding: 1rem; margin: 1rem 0; }
+.static { position: static; top: 50px; /* does nothing */ }
+.relative { position: relative; top: 10px; left: 30px; background: #fff1d6; }
+.parent { position: relative; height: 160px; background: #f3e8ff; }
+.absolute { position: absolute; bottom: 10px; right: 10px; background: #6a11cb; color: white; padding: .3rem .7rem; border-radius: 999px; }
+.fixed { position: fixed; bottom: 16px; right: 16px; background: #c0392b; color: white; padding: .6rem 1rem; border-radius: 999px; z-index: 10; }
+.sticky-wrap { height: 400px; background: #f1f5fa; overflow: visible; }
+.sticky { position: sticky; top: 0; background: #1f3a5f; color: white; padding: .5rem; z-index: 5; }
+.overlap { position: relative; height: 90px; }
+.overlap div { position: absolute; width: 120px; height: 60px; color: white; padding: 4px; }
+.overlap .a { background: #2a7ae2; left: 0; top: 0; z-index: 2; }
+.overlap .b { background: #c0392b; left: 60px; top: 20px; z-index: 1; }

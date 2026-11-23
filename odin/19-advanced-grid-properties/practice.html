@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>19 Advanced Grid Properties – practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Advanced grid properties</h1>
+
+  <h2>repeat(2, 1fr 2fr)</h2>
+  <div class="demo repeat-fr"><div>1fr</div><div>2fr</div><div>1fr</div><div>2fr</div></div>
+
+  <h2>minmax()</h2>
+  <div class="demo minmax"><div>minmax(120px, 200px)</div><div>1fr</div><div>minmax(100px, 1fr)</div></div>
+
+  <h2>auto-fill (keeps empty columns) vs auto-fit (stretches the items)</h2>
+  <p>Only 3 items – make the window wide to see the difference.</p>
+  <div class="demo auto-fill"><div>1</div><div>2</div><div>3</div></div>
+  <div class="demo auto-fit"><div>1</div><div>2</div><div>3</div></div>
+
+  <h2>Responsive cards – no media queries</h2>
+  <div class="demo cards">
+    <div><strong>Card 1</strong><p>repeat(auto-fit, minmax(220px, 1fr))</p></div>
+    <div><strong>Card 2</strong><p>Resize the window…</p></div>
+    <div><strong>Card 3</strong><p>…the number of columns changes by itself.</p></div>
+    <div><strong>Card 4</strong><p>Magic!</p></div>
+    <div><strong>Card 5</strong><p>Just Grid.</p></div>
+  </div>
+  <p>Exercise solutions:
+    <a href="exercises/01-responsive-holy-grail/index.html">01 – Responsive Holy Grail</a> ·
+    <a href="exercises/02-holy-grail-mockup/index.html">02 – Holy Grail Mockup</a>
+  </p>
+</body>
+</html>
