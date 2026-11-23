@@ -1,0 +1,610 @@
+/* ==========================================================================
+   Ashkar Siyad – profile site
+   Plain CSS, no frameworks. Every "ODIN:" comment marks a concept from
+   The Odin Project – Intermediate HTML & CSS.
+   ========================================================================== */
+
+
+/* ODIN: Default styles – a small CSS reset so every browser starts the same */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+img, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; color: inherit; }
+ul[class], ol[class] { list-style: none; }
+a { color: inherit; }
+
+
+/* ODIN: Custom properties – :root colour theme (light) */
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1b2236;
+  --muted: #55607a;
+  --accent: #3355d6;        /* 6.3:1 on white – good contrast */
+  --accent-2: #f2c94c;
+  --accent-soft: #dfe6ff;
+  --border: #d9deea;
+  --ok: #1d7a46;
+  --error: #b3261e;
+  --shadow: 0 0.5rem 1.5rem rgba(27, 34, 54, 0.08);
+  --radius: 1rem;
+  --header-h: 4.25rem;
+  --gap: clamp(1rem, 2.5vw, 2rem);          /* ODIN: CSS functions – clamp() */
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-head: "Poppins", var(--font-body);
+}
+
+/* ODIN: Custom properties – dark theme just redefines the same variables */
+:root[data-theme="dark"] {
+  --bg: #0f1424;
+  --surface: #182038;
+  --text: #e8ecf7;
+  --muted: #a9b3cc;
+  --accent: #8aa4ff;
+  --accent-2: #f2c94c;
+  --accent-soft: #26325a;
+  --border: #2b3656;
+  --ok: #6fd39b;
+  --error: #ff8a80;
+  --shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.45);
+}
+
+
+/* ODIN: CSS units – rem for font sizes/spacing, % and vw for widths */
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ODIN: More text styles – custom font, letter-spacing and text-shadow on headings */
+h1, h2, h3 {
+  font-family: var(--font-head);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+h1 {
+  font-size: clamp(2rem, 5vw + 0.5rem, 3.5rem);   /* ODIN: CSS functions – clamp() */
+  text-shadow: 0 0.15em 0.4em rgba(51, 85, 214, 0.25);
+}
+h2 { font-size: clamp(1.4rem, 2vw + 0.8rem, 2rem); margin-bottom: 0.75em; }
+h3 { font-size: 1.15rem; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.muted { color: var(--muted); }
+.highlight { color: var(--accent); }
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -10rem;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 0.5rem;
+  z-index: 100;
+}
+.skip-link:focus { top: 1rem; }
+
+:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; }
+
+
+/* ==========================================================================
+   PAGE LAYOUT
+   ========================================================================== */
+
+/* ODIN: Grid – page layout with grid-template-areas */
+/* ODIN: Advanced grid – fr units and minmax() in the template */
+/* ODIN: CSS functions – min() keeps the page width at 72rem or 100% minus margins */
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+  grid-template-areas:
+    "header  header"
+    "content sidebar"
+    "footer  footer";
+  gap: 0 var(--gap);
+  width: min(72rem, 100% - 2rem);
+  margin-inline: auto;
+}
+.site-header { grid-area: header; }
+.content     { grid-area: content; }
+.sidebar     { grid-area: sidebar; }
+.site-footer { grid-area: footer; }
+
+/* Content column is its own grid of sections */
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);   /* lets wide children (the table) shrink and scroll */
+  gap: var(--gap);
+  padding-block: var(--gap);
+}
+
+
+/* ==========================================================================
+   HEADER + NAV
+   ========================================================================== */
+
+/* ODIN: Positioning – sticky header stays at the top while scrolling */
+/* ODIN: Flexbox + Grid – flexbox lines up logo, nav and toggle */
+.site-header {
+  position: -webkit-sticky;   /* ODIN: Browser compatibility – vendor prefix for older Safari */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  min-height: var(--header-h);
+  padding: 0.5rem 1rem;
+  margin-top: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ODIN: Browser compatibility – @supports: frosted glass header only where supported */
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+  .site-header {
+    background: color-mix(in srgb, var(--surface) 80%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-family: var(--font-head);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ODIN: Advanced selectors – child combinator (>) targets only direct list items */
+.site-nav > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.site-nav a {
+  display: block;
+  padding: 0.4em 0.8em;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+/* ODIN: Advanced selectors – :hover pseudo-class */
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45em 0.9em;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+
+
+/* ==========================================================================
+   CARDS + HERO
+   ========================================================================== */
+
+/* ODIN: More CSS properties – background, border-radius, box-shadow */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.hero {
+  display: flex;               /* ODIN: Flexbox + Grid – flexbox inside a grid area */
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: var(--radius);
+  /* ODIN: More CSS properties – gradient background */
+  background:
+    radial-gradient(circle at 85% 15%, rgba(242, 201, 76, 0.35), transparent 40%),
+    linear-gradient(135deg, var(--accent-soft), var(--surface));
+  box-shadow: var(--shadow);
+}
+.hero__text { flex: 1 1 20rem; }
+.lead { font-size: 1.1rem; margin-block: 1rem 1.5rem; max-width: 60ch; }
+
+/* ODIN: Positioning – relative parent for the absolute badge */
+.hero__avatar {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(8rem, 20vw, 11rem);
+}
+/* ODIN: Positioning – absolutely positioned badge */
+.badge {
+  position: absolute;
+  right: -0.5rem;
+  bottom: 0.5rem;
+  padding: 0.3em 0.7em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--accent-2);
+  color: #1b2236;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+.btn {
+  display: inline-block;
+  padding: 0.7em 1.3em;
+  border: 2px solid var(--accent);
+  border-radius: 0.75rem;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn--primary { background: var(--accent); color: #fff; }
+:root[data-theme="dark"] .btn--primary { color: #0f1424; }
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+
+/* ==========================================================================
+   ABOUT
+   ========================================================================== */
+
+.about p + p { margin-top: 0.75rem; }
+
+/* ODIN: Advanced selectors – adjacent sibling (+): the list directly after a paragraph */
+.about p + .facts { margin-top: 1.25rem; }
+.facts { display: grid; gap: 0.4rem; }
+
+/* ODIN: Advanced selectors – ::before pseudo-element adds a custom bullet */
+.facts li::before {
+  content: "▸";
+  color: var(--accent);
+  margin-right: 0.5em;
+}
+
+
+/* ==========================================================================
+   SKILLS TABLE
+   ========================================================================== */
+
+.table-wrap { overflow-x: auto; }
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.skills-table caption {
+  text-align: left;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+.skills-table th,
+.skills-table td {
+  padding: 0.7em 0.9em;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.skills-table thead th {
+  background: var(--accent);
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+:root[data-theme="dark"] .skills-table thead th { color: #0f1424; }
+.skills-table thead th:first-child { border-top-left-radius: 0.5rem; }
+.skills-table thead th:last-child  { border-top-right-radius: 0.5rem; }
+
+/* ODIN: Advanced selectors – :nth-child(even) zebra stripes */
+.skills-table tbody tr:nth-child(even) { background: var(--accent-soft); }
+.skills-table tbody tr:hover { background: color-mix(in srgb, var(--accent-2) 30%, transparent); }
+
+/* ODIN: Advanced selectors – attribute selector [data-level] draws a level bar with ::after */
+.level { display: inline-flex; align-items: center; gap: 0.5em; }
+.level::after {
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  width: 4em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent) var(--fill, 50%), var(--border) 0);
+}
+.level[data-level="2"] { --fill: 40%; }
+.level[data-level="3"] { --fill: 65%; }
+.level[data-level="4"] { --fill: 90%; }
+
+
+/* ==========================================================================
+   PROJECTS DASHBOARD
+   ========================================================================== */
+
+/* ODIN: Admin Dashboard – the whole section is a grid like a dashboard */
+.dashboard {
+  display: grid;
+  gap: var(--gap);
+}
+
+/* ODIN: Advanced grid – repeat(auto-fit, minmax(…, 1fr)) responsive stat tiles */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1rem;
+}
+.stat {
+  display: flex;                /* ODIN: Flexbox + Grid – flexbox inside each grid tile */
+  flex-direction: column;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 0.35rem solid var(--accent);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+.stat__num {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.stat__label { color: var(--muted); font-size: 0.9rem; }
+
+/* ODIN: Advanced grid – repeat(), auto-fit, minmax() and fr for the project cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+}
+
+/* ODIN: Flexbox + Grid – each card is a flex column so the link sits at the bottom */
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project:hover { transform: translateY(-4px); }
+
+/* ODIN: Grid positioning – span: featured card covers two columns */
+.project--featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #3355d6, #5b3fc4);   /* fixed dark colours keep white text readable in both themes */
+  color: #fff;
+  border: none;
+}
+.project--featured .tags li { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+/* ODIN: Grid positioning – line numbers: from line 1 to the last line (-1) */
+.project-grid__note {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ODIN: More CSS properties – opacity */
+.project p { opacity: 0.85; }
+.project__link { margin-top: auto; font-weight: 600; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tags li {
+  font-size: 0.75rem;
+  padding: 0.2em 0.7em;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ODIN: Advanced selectors – general sibling (~): every card after the featured one gets a top accent */
+.project--featured ~ .project { border-top: 0.25rem solid var(--accent-2); }
+
+
+/* ==========================================================================
+   CERTIFICATES
+   ========================================================================== */
+
+.cert-list { counter-reset: cert; display: grid; gap: 0.6rem; }
+.cert-list li {
+  counter-increment: cert;
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.6rem;
+}
+/* ODIN: Advanced selectors – ::before shows a numbered circle */
+.cert-list li::before {
+  content: counter(cert);
+  flex: 0 0 1.8rem;
+  height: 1.8rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+/* ODIN: Advanced selectors – :nth-child(odd) */
+.cert-list li:nth-child(odd) { background: var(--accent-soft); }
+
+
+/* ==========================================================================
+   CONTACT FORM
+   ========================================================================== */
+
+.form { display: grid; gap: 1.25rem; max-width: 40rem; }
+
+/* ODIN: Form basics – styled fieldset and legend */
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+legend {
+  padding-inline: 0.5em;
+  font-family: var(--font-head);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.field { display: grid; gap: 0.3rem; }
+.field label { font-weight: 600; }
+.field--check { grid-template-columns: auto 1fr; align-items: center; gap: 0.6rem; }
+.field--check input { width: 1.2rem; height: 1.2rem; accent-color: var(--accent); }
+
+/* ODIN: Advanced selectors – attribute selectors target input types */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.65em 0.8em;
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  background: var(--bg);
+  /* ODIN: CSS functions – max() keeps inputs at least 2.75rem high (good tap target) */
+  min-height: max(2.75rem, 2.2em);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: 0.8; }
+
+.hint { font-size: 0.8rem; color: var(--muted); }
+
+/* ODIN: Form validation – :valid / :invalid styling (only after the user has typed) */
+.field input:not(:placeholder-shown):valid,
+.field textarea:not(:placeholder-shown):valid {
+  border-color: var(--ok);
+}
+.field input:not(:placeholder-shown):invalid,
+.field textarea:not(:placeholder-shown):invalid {
+  border-color: var(--error);
+  background: color-mix(in srgb, var(--error) 8%, var(--bg));
+}
+/* After pressing submit, show every invalid field */
+.form.was-checked .field :invalid { border-color: var(--error); }
+.field input:not(:placeholder-shown):invalid + .hint { color: var(--error); font-weight: 600; }
+
+.form-status { font-weight: 600; min-height: 1.5em; }
+.form-status.is-ok { color: var(--ok); }
+.form-status.is-error { color: var(--error); }
+
+
+/* ==========================================================================
+   SIDEBAR + FOOTER
+   ========================================================================== */
+
+.sidebar {
+  align-self: start;
+  position: sticky;           /* ODIN: Positioning – sticky sidebar under the header */
+  top: calc(var(--header-h) + 1.75rem);   /* ODIN: CSS functions – calc() */
+  margin-top: var(--gap);
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.sidebar__title { font-size: 1.2rem; }
+.social { display: grid; gap: 0.5rem; }
+.social a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  word-break: break-all;
+}
+.social a:hover { background: var(--accent-soft); color: var(--accent); }
+
+/* ODIN: Advanced selectors – attribute selectors: [href^="mailto:"] and [href*="github"] */
+.social a[href^="mailto:"] svg { color: #d14836; }
+.social a[href*="github"] svg  { color: var(--text); }
+.social a[href*="linkedin"] svg,
+.social a[href^="["] svg       { color: #0a66c2; }
+.sidebar__loc { margin-top: 1rem; color: var(--muted); }
+
+.site-footer {
+  padding: 2rem 0 3rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* ODIN: Grid – on small screens the template areas change to one column */
+@media (max-width: 52rem) {
+  .page {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content"
+      "footer";
+  }
+  .sidebar { position: static; }
+  .project--featured { grid-column: auto; }   /* no 2-column span on phones */
+}
+
+@media (max-width: 34rem) {
+  /* Compact sticky header: logo + toggle on row 1, a swipeable nav on row 2 */
+  .site-header { gap: 0.25rem 0.5rem; padding: 0.4rem 0.75rem; }
+  .theme-toggle { order: 2; }
+  .site-nav { order: 3; width: 100%; overflow-x: auto; }
+  .site-nav > ul { flex-wrap: nowrap; }
+  .site-nav a { white-space: nowrap; padding: 0.3em 0.7em; font-size: 0.9rem; }
+  .hero { flex-direction: column; text-align: center; }
+  .hero__actions { justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

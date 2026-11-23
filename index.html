@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ashkar Siyad – Web Technologies student at Riga Nordic University. Profile, skills, projects and contact.">
+  <title>Ashkar Siyad – Web Technologies Student</title>
+
+  <!-- ODIN: More text styles – custom font loaded from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Accessibility: lets keyboard users jump straight to the content -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ODIN: Grid – grid-template-areas: .page is the grid; each section below is placed in a named area -->
+  <div class="page">
+
+    <!-- ODIN: Positioning – sticky header (position: sticky in style.css) -->
+    <!-- ODIN: Flexbox + Grid – the header/nav uses flexbox inside the grid layout -->
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Ashkar Siyad – back to top">
+        <!-- ODIN: SVG – inline SVG logo (monogram "AS") -->
+        <svg class="brand__logo" viewBox="0 0 48 48" width="40" height="40" role="img" aria-labelledby="logoTitle">
+          <title id="logoTitle">AS monogram logo</title>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#4f7cff"/>
+              <stop offset="100%" stop-color="#f2c94c"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#logoGrad)"/>
+          <text x="24" y="31" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="700" font-size="18" fill="#ffffff">AS</text>
+        </svg>
+        <span class="brand__name">Ashkar Siyad</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certs">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ODIN: Custom properties – dark-mode toggle switches the :root colour theme -->
+      <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <span class="theme-toggle__label">Dark</span>
+      </button>
+    </header>
+
+    <main id="main" class="content">
+
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="top" aria-labelledby="heroTitle">
+        <div class="hero__avatar">
+          <!-- ODIN: SVG – inline SVG avatar illustration (camera, for photography) -->
+          <svg viewBox="0 0 120 120" role="img" aria-labelledby="avatarTitle">
+            <title id="avatarTitle">Illustration of a camera, representing Ashkar's love of photography</title>
+            <circle cx="60" cy="60" r="58" fill="var(--accent-soft)"/>
+            <rect x="22" y="40" width="76" height="50" rx="10" fill="var(--accent)"/>
+            <rect x="44" y="30" width="32" height="14" rx="4" fill="var(--accent)"/>
+            <circle cx="60" cy="65" r="17" fill="var(--surface)"/>
+            <circle cx="60" cy="65" r="10" fill="var(--accent-2)"/>
+            <circle cx="86" cy="50" r="4" fill="var(--surface)"/>
+          </svg>
+          <!-- ODIN: Positioning – absolutely positioned badge on top of the avatar -->
+          <span class="badge">Open to internships</span>
+        </div>
+
+        <div class="hero__text">
+          <p class="eyebrow">Web Technologies student · RNU</p>
+          <h1 id="heroTitle">Hi, I'm <span class="highlight">Ashkar Siyad</span></h1>
+          <p class="lead">
+            I'm from India, I live in Riga, Latvia, and I'm studying Web Technologies at
+            Riga Nordic University. I love photography, video editing and travelling – and
+            I'm learning to build clean, accessible websites.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">See my projects</a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section class="about card" id="about" aria-labelledby="aboutTitle">
+        <h2 id="aboutTitle">About me</h2>
+        <p>
+          I started the Web Technologies programme at RNU in 2025. Moving from India to Latvia
+          gave me the chance to study in an international environment and work with people from
+          many cultures.
+        </p>
+        <p>
+          I'm a reliable, hands-on person who likes getting things done. Outside class I take
+          photos, edit videos and explore new places with my camera.
+        </p>
+        <!-- ODIN: Advanced selectors – the "+" sibling selector styles the list right after this paragraph -->
+        <ul class="facts">
+          <li><strong>From:</strong> India</li>
+          <li><strong>Lives in:</strong> Riga, Latvia</li>
+          <li><strong>Studies:</strong> Web Technologies, Riga Nordic University (2025 – present)</li>
+          <li><strong>Experience:</strong> [EXPERIENCE – Ashkar to fill: roles / internships]</li>
+          <li><strong>Languages:</strong> [LANGUAGES – Ashkar to fill]</li>
+        </ul>
+      </section>
+
+      <!-- ===== SKILLS TABLE ===== -->
+      <section class="skills card" id="skills" aria-labelledby="skillsTitle">
+        <h2 id="skillsTitle">Skills &amp; education</h2>
+        <!-- ODIN: Tables – skills table with caption, thead, tbody and scope attributes -->
+        <div class="table-wrap">
+          <table class="skills-table">
+            <caption>My current skills and where I learned them</caption>
+            <thead>
+              <tr>
+                <th scope="col">Skill</th>
+                <th scope="col">Level</th>
+                <th scope="col">Where I learned it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">HTML</th>
+                <td><span class="level" data-level="3">Intermediate</span></td>
+                <td>RNU · The Odin Project</td>
+              </tr>
+              <tr>
+                <th scope="row">CSS (Grid, Flexbox)</th>
+                <td><span class="level" data-level="3">Intermediate</span></td>
+                <td>RNU · The Odin Project</td>
+              </tr>
+              <tr>
+                <th scope="row">C++ basics</th>
+                <td><span class="level" data-level="2">Beginner+</span></td>
+                <td>Entri – Advanced Diploma</td>
+              </tr>
+              <tr>
+                <th scope="row">Generative AI &amp; prompting</th>
+                <td><span class="level" data-level="3">Intermediate</span></td>
+                <td>Entri · IBM SkillsBuild</td>
+              </tr>
+              <tr>
+                <th scope="row">IT support</th>
+                <td><span class="level" data-level="2">Beginner+</span></td>
+                <td>Udemy course</td>
+              </tr>
+              <tr>
+                <th scope="row">Photography &amp; video editing</th>
+                <td><span class="level" data-level="4">Strong</span></td>
+                <td>Self-taught</td>
+              </tr>
+              <tr>
+                <th scope="row">[MORE SKILLS – Ashkar to fill]</th>
+                <td>–</td>
+                <td>–</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== PROJECTS DASHBOARD ===== -->
+      <!-- ODIN: Admin Dashboard – "My Projects" built as a dashboard with CSS Grid -->
+      <section class="dashboard" id="projects" aria-labelledby="projectsTitle">
+        <div class="dashboard__head">
+          <h2 id="projectsTitle">My Projects</h2>
+          <p class="muted">A dashboard of what I've built and studied.</p>
+        </div>
+
+        <!-- ODIN: Advanced grid – repeat(), auto-fit, minmax() and fr units on .stats -->
+        <ul class="stats" aria-label="Quick numbers">
+          <li class="stat"><span class="stat__num">3</span><span class="stat__label">Mini projects</span></li>
+          <li class="stat"><span class="stat__num">13</span><span class="stat__label">Certificates</span></li>
+          <li class="stat"><span class="stat__num">20</span><span class="stat__label">Odin lessons</span></li>
+          <li class="stat"><span class="stat__num">1</span><span class="stat__label">Live website</span></li>
+        </ul>
+
+        <!-- ODIN: Flexbox + Grid – grid places the cards, flexbox lays out inside each card -->
+        <div class="project-grid">
+          <!-- ODIN: Grid positioning – this featured card spans 2 columns (span) -->
+          <article class="project project--featured">
+            <h3>Personal profile website</h3>
+            <p>This site: plain HTML &amp; CSS using every concept from The Odin Project's Intermediate HTML &amp; CSS course.</p>
+            <ul class="tags"><li>HTML</li><li>CSS Grid</li><li>Flexbox</li><li>Forms</li></ul>
+            <a class="project__link" href="https://github.com/[GITHUB-USERNAME]/[GITHUB-USERNAME].github.io">View code on GitHub</a>
+          </article>
+          <article class="project">
+            <h3>Generative AI &amp; Prompt Engineering</h3>
+            <p>A 34-slide presentation about how generative AI works and how to write good prompts.</p>
+            <ul class="tags"><li>AI</li><li>Prompting</li></ul>
+          </article>
+          <article class="project">
+            <h3>C++ Programming</h3>
+            <p>Course project covering variables, loops, functions, arrays and an intro to OOP.</p>
+            <ul class="tags"><li>C++</li><li>OOP</li></ul>
+          </article>
+          <article class="project">
+            <h3>Information Technology Support</h3>
+            <p>Overview of IT infrastructure, operating systems, networking, cloud and security.</p>
+            <ul class="tags"><li>IT</li><li>Networking</li></ul>
+          </article>
+          <!-- ODIN: Grid positioning – line numbers: grid-column: 1 / -1 makes this note full width -->
+          <p class="project-grid__note">More projects coming soon as I continue my studies at RNU.</p>
+        </div>
+      </section>
+
+      <!-- ===== CERTIFICATES ===== -->
+      <section class="certs card" id="certs" aria-labelledby="certsTitle">
+        <h2 id="certsTitle">Certificates</h2>
+        <!-- ODIN: Advanced selectors – :nth-child() and ::before style this list -->
+        <ol class="cert-list">
+          <li>Generative AI and Prompt Engineering Basics – Entri (May 2025)</li>
+          <li>Advanced Diploma in Programming through C++ – Entri (Apr 2025)</li>
+          <li>Information Technology Support – Udemy (Dec 2024)</li>
+          <li>10 AI courses – IBM SkillsBuild (AI Fundamentals, AI Literacy, Agentic AI and more)</li>
+        </ol>
+      </section>
+
+      <!-- ===== CONTACT FORM ===== -->
+      <!-- ODIN: Forms – sign-up/contact form with labels, input types, fieldset and validation -->
+      <section class="contact card" id="contact" aria-labelledby="contactTitle">
+        <h2 id="contactTitle">Contact me</h2>
+        <p class="muted">This demo form checks your input in the browser. Nothing is sent anywhere.</p>
+
+        <form class="form" id="contactForm" novalidate>
+          <!-- ODIN: Form basics – fieldset + legend group related inputs -->
+          <fieldset>
+            <legend>About you</legend>
+
+            <div class="field">
+              <label for="name">Full name <span aria-hidden="true">*</span></label>
+              <!-- ODIN: Form validation – required + minlength -->
+              <input id="name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="e.g. Anna Bērziņa">
+              <p class="hint">At least 2 characters.</p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <!-- ODIN: Form basics – type="email" input -->
+              <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+              <p class="hint">A valid email address, e.g. name@example.com.</p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <!-- ODIN: Form validation – pattern attribute -->
+              <input id="phone" name="phone" type="tel" pattern="\+?[0-9 ]{7,15}" autocomplete="tel" placeholder="+371 20000000">
+              <p class="hint">Digits and spaces, 7–15 characters, may start with +.</p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Your message</legend>
+
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic">
+                <option>Internship</option>
+                <option>Photography</option>
+                <option>Study at RNU</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" required minlength="10" placeholder="Write at least 10 characters"></textarea>
+            </div>
+
+            <div class="field field--check">
+              <input id="consent" name="consent" type="checkbox" required>
+              <label for="consent">I understand this is a demo form <span aria-hidden="true">*</span></label>
+            </div>
+          </fieldset>
+
+          <button class="btn btn--primary" type="submit">Check &amp; send</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <!-- ===== SIDEBAR (social links) ===== -->
+    <aside class="sidebar" aria-label="Contact links">
+      <h2 class="sidebar__title">Find me</h2>
+      <!-- ODIN: Advanced selectors – attribute selectors style links by their href -->
+      <ul class="social">
+        <li>
+          <a href="mailto:ashkarsiyad7@gmail.com">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z"/></svg>
+            ashkarsiyad7@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/[GITHUB-USERNAME]">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5a3.9 3.9 0 0 1 1-2.7 3.6 3.6 0 0 1 .1-2.7s.9-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href="[LINKEDIN-URL]">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM2 9h4v12H2zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+      <p class="sidebar__loc">📍 Riga, Latvia</p>
+    </aside>
+
+    <footer class="site-footer">
+      <p>© 2026 Ashkar Siyad · Built with plain HTML &amp; CSS · <a href="#top">Back to top</a></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
