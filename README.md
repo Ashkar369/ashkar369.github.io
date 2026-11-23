@@ -2,7 +2,7 @@
 
 A personal profile site built with **plain HTML and CSS** (plus a few lines of plain JavaScript for the dark-mode toggle and the demo form). It is a course assignment for **Web Technologies at Riga Nordic University (RNU)**, and it uses every concept from The Odin Project's **Intermediate HTML & CSS** course.
 
-- **Live site:** https://[GITHUB-USERNAME].github.io
+- **Live site:** https://ashkar369.github.io
 - **Files:** `index.html`, `style.css`, `script.js`
 
 Every concept is marked in the code with a comment that starts with `ODIN:`. To find them all, search for `ODIN:`.
