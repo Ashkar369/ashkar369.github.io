@@ -16,7 +16,7 @@ My personal profile website for the **Web Technologies** course at **Riga Nordic
 | **Certifications** | Gallery of all 13 certificates (click to open the full image), the IBM certificates PDF and the merged Certifications deck. |
 | **Class activities** | Table of every practical task with its date, description and links. |
 | **Past projects** | My three mini projects (IT Support, C++, Generative AI) with their PPTX files, plus the merged Mini Projects deck. |
-| **The Odin Project** | One tab per course: Intermediate HTML & CSS, Foundations (JavaScript Basics), JavaScript, and Advanced HTML & CSS (coming soon). Each tab has an overview, the presentation and screen recording (Google Drive), and all practical work with live and code links. |
+| **The Odin Project** | One tab per course: Intermediate HTML & CSS, Foundations (JavaScript Basics), JavaScript, and Advanced HTML & CSS (coming soon). Each tab has an overview and all practical work with live and code links. |
 | **Homework** | Coming soon. |
 | **Contact** | Form with HTML validation that opens your email app with the message ready to send. |
 
